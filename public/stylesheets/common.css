@@ -1,0 +1,48 @@
+*{margin:0;padding:0;}
+body{margin:0;padding:0;font-size:12px;color:#333;text-align:center;font-family:SimSun;}
+form,ul,ul li,p{margin:0;padding:0;}
+ul, ul li{list-style:none;}
+a{color:#36C;text-decoration:none;}
+a:hover{color:#ff4400;text-decoration:underline;}
+img{border:0px;}
+.clearfix:after {content:"."; display:block; height:0; clear:both; visibility:hidden; }
+* html>body .clearfix { display:inline-block; width:100%; }
+* html .clearfix { height:1%; /* End hide from IE-mac */ } 
+/* ie7 hack*/ 
+*+html .clearfix { min-height:1%; } 
+.clearfix{zoom:1;} 
+
+h1, h2, h3, h4, h5, h6{margin: 0;padding: 0;}
+h1 span, h2 span, h3 span, h4 span{display: none;}
+input, option, select, textarea, button {font-size: 12px;}
+
+#wapper{width:100%;text-align:center;margin:0 auto;}
+#Container{margin:0 auto;width:960px;text-align:left;background:#FFF;}
+
+#Header{height:108px;}
+	.logo{padding-top:20px;padding-left:20px;}
+	.search{}
+	
+#Nav{margin:0 auto;height:36px;border:1px solid #dedede;border-bottom:2px solid #346ba3;}
+	.NavList{float:left;display:inline;}
+		.NavList li{float:left;display:inline;padding:12px 36px 10px 36px;}
+		.NavList li.current{background:#346ba3;}
+		.NavList li.split{padding:12px 0;color:#dddddd;}
+		.NavList li a{font-size:12px;font-weight:normal;color:#000;}
+		.NavList li a:hover{color:#000;text-decoration:underline;}
+		.NavList li.current a{color:#FFF;font-weight:bold;}
+		.NavList li.current a:hover{color:#FFF;text-decoration:none;}
+		
+
+#PageBody{height:auto !important;margin:auto;min-height:200px;text-align:left;padding-top:10px;}
+
+#Footer{margin:0 auto;margin-top:10px;text-align:left;border-top:1px solid #ebebeb;}
+	#Foot{padding:26px 0 18px 0;text-align:center;font-family:Arial, Helvetica, sans-serif;color:#404040;}
+	
+#Main{float:left;display:inline;width:638px;}
+#Side{float:right;display:inline;width:300px;}
+.box{border:1px solid #EBEBEB;}
+	.box_title{padding:8px 18px;background:#f8f8f8;border-bottom:1px solid #EBEBEB;}
+	.box_title h4{font-size:12px;font-weight:bold;color:#23558D;}
+	.box_title h4 a{color:#23558D;}
+

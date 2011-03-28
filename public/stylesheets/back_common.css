@@ -1,0 +1,46 @@
+BODY {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 11px;
+	PADDING-BOTTOM: 0px;
+	MARGIN: 0px;
+	COLOR: #000000;
+	PADDING-TOP: 0px;
+	FONT-FAMILY: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	BACKGROUND-COLOR: #f9f8f8
+}
+FORM {
+	BORDER-RIGHT: #f9f8f8 1px solid;
+	BORDER-TOP: #f9f8f8 1px solid;
+	MARGIN: 0px;
+	BORDER-LEFT: #f9f8f8 1px solid;
+	BORDER-BOTTOM: #f9f8f8 1px solid
+}
+INPUT {
+	VERTICAL-ALIGN: middle
+}
+.popupHeader {
+	PADDING-RIGHT: 5px;
+	PADDING-LEFT: 5px;
+	PADDING-BOTTOM: 5px;
+	PADDING-TOP: 5px;
+	BORDER-BOTTOM: #0240a3 1px solid;
+	BACKGROUND-COLOR: #8ca4ed
+}
+TD {
+	FONT-SIZE: 11px;
+	FONT-FAMILY: Tahoma, Verdana, Arial, Helvetica, sans-serif
+}
+TH {
+	FONT-SIZE: 11px;
+	FONT-FAMILY: Tahoma, Verdana, Arial, Helvetica, sans-serif
+}
+INPUT {
+	FONT-SIZE: 11px;
+	FONT-FAMILY: Tahoma, Verdana, Arial, Helvetica, sans-serif
+}
+
+SMALL {
+	FONT-SIZE: 11px
+}

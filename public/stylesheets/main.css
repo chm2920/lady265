@@ -1,0 +1,13 @@
+/* CSS Document */
+
+.tag_list{padding:10px 0px 10px 20px;}
+	.tag_list li{float:left;display:block;margin-right:10px;line-height:21px;height:21px;}
+
+.v_list{padding:0px 0 12px 36px;}
+	.v_list li{float:left;margin-right:28px;margin-top:17px;}
+	.v_list li .v_cover{width:120px;height:90px;background:#000;overflow:hidden;}
+	.v_list li .v_cover img{width:120px; vertical-align:middle;}
+	.v_list li .v_title{margin-top:6px;width:120px;height:23px;line-height:23px;overflow:hidden;}
+
+.r_list{padding:10px 5px 10px 20px;}
+	.r_list li{height:21px;line-height:21px;width:265px;overflow:hidden;white-space:nowrap;}	

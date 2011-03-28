@@ -1,0 +1,127 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>后台管理</title>
+<%= stylesheet_link_tag 'willpaginate' %>
+<style>
+*{margin:0;padding:0;}
+body{background:#D7E7EE;font-size:12px;margin:0;padding:0;}
+div, table, td, p, form, ul, li{margin:0;padding:0;}
+.main{background:#FFFFFF;border:1px solid #DDDDDD;margin:0;padding:0;}
+a{color:#0079AC;text-decoration:none;font-size:12px;}
+a:hover{color:#FF9900;text-decoration:underline;}
+table,th,td{font-size:12px;color:#333333;}
+
+.data_table{}
+.data_tr{height:25px;}
+.data_td_label{background:#EEEEEE;}
+.data_td_text{background:#FFF;padding:4px;}
+.top-nav{color:#FFFFFF;}
+.border_bottom{background:#DDDDDD;height:1px;}
+
+</style>
+<style>
+.input_text{font-size:12px;border:1px solid #84a1bd;width:260px;}
+.input_page{font-size:12px;border:1px solid #84a1bd;}
+.btn_s{font-size:11px;padding:1px 4px;}
+.a_button{
+	background:url(/images/admin/btn_bg_2.gif);
+	width:61px;
+	FONT-SIZE: 11px; 
+	CURSOR: pointer; 
+	COLOR: #000000; 
+	BORDER-TOP-STYLE: none; 
+	BACKGROUND-REPEAT: no-repeat; 
+	FONT-FAMILY: Tahoma, Verdana, Arial, Helvetica, sans-serif; 
+	BORDER-RIGHT-STYLE: none; 
+	BORDER-LEFT-STYLE: none; 
+	HEIGHT: 21px; 
+	BACKGROUND-COLOR: transparent; 
+	TEXT-ALIGN: center; 
+	BORDER-BOTTOM-STYLE: none;
+}
+.b_button{
+	background:url(/images/admin/btn_bg.gif);
+	width:91px;
+	FONT-SIZE: 11px; 
+	CURSOR: pointer; 
+	COLOR: #000000; 
+	BORDER-TOP-STYLE: none; 
+	BACKGROUND-REPEAT: no-repeat; 
+	FONT-FAMILY: Tahoma, Verdana, Arial, Helvetica, sans-serif; 
+	BORDER-RIGHT-STYLE: none; 
+	BORDER-LEFT-STYLE: none; 
+	HEIGHT: 21px; 
+	BACKGROUND-COLOR: transparent; 
+	TEXT-ALIGN: center; 
+	BORDER-BOTTOM-STYLE: none;
+}
+.btn_ok{
+	background:url(/images/admin/btn_ok_bg.gif);
+	width:91px;
+	FONT-SIZE: 11px; 
+	CURSOR: pointer; 
+	COLOR: #000000; 
+	BORDER-TOP-STYLE: none; 
+	BACKGROUND-REPEAT: no-repeat; 
+	FONT-FAMILY: Tahoma, Verdana, Arial, Helvetica, sans-serif; 
+	BORDER-RIGHT-STYLE: none; 
+	BORDER-LEFT-STYLE: none; 
+	HEIGHT: 21px; 
+	BACKGROUND-COLOR: transparent; 
+	TEXT-ALIGN: center; 
+	BORDER-BOTTOM-STYLE: none;
+}
+textarea{font-size:12px;border:1px solid #84a1bd;}
+
+/*	PAGINATION	*/
+div.pagination {
+	margin: 10px;
+	clear:both;
+	}
+	div.pagination div.pagination_info {
+		float:right;
+		}
+div.pagination a {
+	margin-right:0.3em;
+	padding:0.4em;	
+	}
+	div.pagination a:hover {
+		background:#828282;
+		color:#ffffff;
+		margin-right:0.3em;
+		padding:0.4em;	
+		}
+div.pagination a.active {
+		background:#828282;
+		border:none;
+		color:#ffffff;		
+	}
+</style>
+<%= javascript_include_tag "prototype", "rails" %>
+<%= kindeditor_javacript_include_tag %>  
+<script>
+	function fEvent(sType,oInput){
+		switch (sType){
+			case "focus" :
+				oInput.isfocus = true;
+			case "mouseover" :
+				oInput.style.borderColor = '#9ecc00';
+				break;
+			case "blur" :
+				oInput.isfocus = false;
+			case "mouseout" :
+				if(!oInput.isfocus){
+					oInput.style.borderColor='#84a1bd';
+				}
+				break;
+		}
+	}
+</script>
+  <%= csrf_meta_tag %>
+</head>
+
+<body>
+<%= yield %>
+</body>
+</html>

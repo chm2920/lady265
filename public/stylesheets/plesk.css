@@ -1,0 +1,135 @@
+
+/*保留*/
+#loginTitle {
+    PADDING-LEFT: 75px;
+    FONT-SIZE: 14px;
+    BACKGROUND-IMAGE: url(/images/admin/login-header.gif);
+    WIDTH: 378px;
+    COLOR: #ffffff;
+    font-weight: bold;
+    FONT-FAMILY: "";
+    HEIGHT: 59px
+}
+
+/*保留，登陆文本框*/
+INPUT.FlatInput {
+    BORDER-RIGHT: #7f9db9 1px solid;
+    BORDER-TOP: #7f9db9 1px solid;
+    BORDER-LEFT: #7f9db9 1px solid;
+    BORDER-BOTTOM: #7f9db9 1px solid;
+    WIDTH: 150px;
+    BACKGROUND-COLOR: #ffffff
+}
+/*保留*/
+INPUT.FlatInputFlow {
+    BORDER-RIGHT: #7f9db9 1px solid;
+    BORDER-TOP: #7f9db9 1px solid;
+    BORDER-LEFT: #7f9db9 1px solid;
+    BORDER-BOTTOM: #7f9db9 1px solid;
+    BACKGROUND-COLOR: #ffffff
+}
+
+/*保留，*/
+.buttonLeft {
+    PADDING-RIGHT: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-BOTTOM: 0px;
+    MARGIN: 0px;
+    WIDTH: 3px;
+    BORDER-TOP-STYLE: none;
+    PADDING-TOP: 0px;
+    BORDER-RIGHT-STYLE: none;
+    BORDER-LEFT-STYLE: none;
+    HEIGHT: 22px;
+    BORDER-BOTTOM-STYLE: none
+}
+
+/*保留*/
+.buttonRight {
+    PADDING-RIGHT: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-BOTTOM: 0px;
+    MARGIN: 0px;
+    WIDTH: 3px;
+    BORDER-TOP-STYLE: none;
+    PADDING-TOP: 0px;
+    BORDER-RIGHT-STYLE: none;
+    BORDER-LEFT-STYLE: none;
+    HEIGHT: 22px;
+    BORDER-BOTTOM-STYLE: none
+}
+/*保留*/
+.buttonRight IMG {
+    PADDING-RIGHT: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-BOTTOM: 0px;
+    MARGIN: 0px;
+    WIDTH: 3px;
+    BORDER-TOP-STYLE: none;
+    PADDING-TOP: 0px;
+    BORDER-RIGHT-STYLE: none;
+    BORDER-LEFT-STYLE: none;
+    HEIGHT: 21px;
+    BORDER-BOTTOM-STYLE: none
+}
+/*保留*/
+.buttonLeft {
+    BACKGROUND-IMAGE: url(/images/admin/btn_bg_left.gif)
+}
+/*保留*/
+.buttonRight {
+    BACKGROUND-IMAGE: url(/images/admin/btn_bg_right.gif)
+}
+/*保留*/
+.buttonCenter {
+    PADDING-RIGHT: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-BOTTOM: 0px;
+    MARGIN: 0px;
+    BORDER-TOP-STYLE: none;
+    PADDING-TOP: 0px;
+    BORDER-RIGHT-STYLE: none;
+    BORDER-LEFT-STYLE: none;
+    BORDER-BOTTOM-STYLE: none
+}
+/*保留*/
+.buttonCenter INPUT {
+    FONT-SIZE: 11px;
+    CURSOR: pointer;
+    COLOR: #000000;
+    BORDER-TOP-STYLE: none;
+    BACKGROUND-REPEAT: no-repeat;
+    FONT-FAMILY: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    BORDER-RIGHT-STYLE: none;
+    BORDER-LEFT-STYLE: none;
+    HEIGHT: 21px;
+    BACKGROUND-COLOR: transparent;
+    TEXT-ALIGN: center;
+    BORDER-BOTTOM-STYLE: none
+}
+/*保留*/
+.FormButton {
+    WIDTH: 97px
+}
+
+/*baoliu*/
+.FormButton .buttonCenter INPUT {
+    MIN-WIDTH: 91px;
+    BACKGROUND-IMAGE: url(/images/admin/btn_bg_3.gif);
+    WIDTH: 100%
+}
+
+
+/*保留*/
+TABLE.FrontScreen {
+    BORDER-RIGHT: #d0d0d0 1px solid;
+    BORDER-TOP: #d0d0d0 1px solid;
+    BORDER-LEFT: #d0d0d0 1px solid;
+    BORDER-BOTTOM: #d0d0d0 1px solid
+}
+/*保留*/
+TABLE.FrontScreen TD.title {
+    FONT-WEIGHT: bold;
+    COLOR: #999999;
+    align: left
+}

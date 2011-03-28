@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>管理登录</title>
+    <%= stylesheet_link_tag 'back_common', 'plesk' %>
+    <%= javascript_include_tag 'admin/common_script' %>
+
+  </head>
+
+  <body>
+    <BR>
+      <BR>
+
+        <TABLE cellSpacing="0" cellPadding="0" align="center" border="0">
+          <TBODY>
+            <% form_tag '' do %>
+              <TR>
+                <TD id="loginTitle" colSpan="2">管理登录</TD></TR>
+              <TR>
+                <TD>
+                  <TABLE class="FrontScreen" cellSpacing="0" cellPadding="3" width="100%" border="0">
+                    <TBODY>
+
+                      <TR>
+                        <TD align="middle" colSpan="3">
+                        </TD></TR>
+                      <TR>
+                        <TD></TD>
+                        <TD align="middle" colSpan="2">请输入您的登录信息</TD></TR>
+                      <TR>
+
+                        <TD align="middle" colSpan="3">
+                        </TD></TR>
+                      <TR>
+                        <TD></TD>
+                        <TD class="title" width="50%">帐&nbsp;&nbsp;号</TD>
+                        <TD align="left" width="50%">
+                          <input id="name" name="name" type="text" />
+
+                        </TD></TR>
+                      <TR>
+                        <TD></TD>
+                        <TD class="title" width="50%">密&nbsp;&nbsp;码</TD>
+                        <TD align="left" width="50%">
+                          <input id="password" name="password" type="password" />
+                        </TD></TR>
+                      <TR>
+
+                        <TD></TD>
+                        <TD style="PADDING-RIGHT: 7px; PADDING-LEFT: 0px; PADDING-BOTTOM: 7px; PADDING-TOP: 7px" colSpan="2">
+                          <TABLE width="100%" border="0">
+                            <TBODY>
+                              <TR>
+                                <TD align="left" width="100%"><A href="#"></A>&nbsp; </TD>
+                                <TD></TD>
+                                <TD>
+
+                                  <TABLE class="FormButton" cellSpacing="0" cellPadding="0" border="0">
+                                    <TBODY>
+                                      <TR>
+                                        <TD class="buttonLeft"></TD>
+                                        <TD class="buttonCenter">
+                                          <INPUT id="" onClick="if (1!=0){showSandclock();beforeSubmit();return true;}else{return false}; " type="submit" value="登录" name="doLogin"></TD>
+                                        <TD class="buttonRight"></TD>
+                                      </TR>
+                                    </TBODY>
+
+                                  </TABLE>
+                                </TD>
+                              </TR>
+                            </TBODY>
+                          </TABLE>
+                        </TD>
+                      </TR>
+                    </TBODY>
+                  </TABLE>
+
+                </TD>
+              </TR>
+              <TR>
+                <TD>
+                </TD>
+              </TR>
+              <TR>
+                <TD>
+                  <TABLE cellSpacing="0" cellPadding="0" width="100%" border="0">
+                    <TBODY>
+
+                      <TR>
+                        <TD>&nbsp;</TD>
+                        <TD align="right"><SMALL style="COLOR: #999999">&copy; 2010-2012 Inc.Imcol,<BR>All rights reserved</SMALL>
+                        </TD>
+                      </TR>
+                    </TBODY>
+                  </TABLE>
+
+                </TD>
+              </TR>
+            <% end %>
+          </TBODY>
+        </TABLE>
+        </body>
+        </html>
+

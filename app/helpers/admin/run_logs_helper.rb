@@ -1,0 +1,2 @@
+module Admin::RunLogsHelper
+end
