@@ -1,13 +1,9 @@
 /* CSS Document */
 
-.tag_list{padding:10px 0px 10px 20px;}
-	.tag_list li{float:left;display:block;margin-right:10px;line-height:21px;height:21px;}
-
-.v_list{padding:0px 0 12px 36px;}
-	.v_list li{float:left;margin-right:28px;margin-top:17px;}
-	.v_list li .v_cover{width:120px;height:90px;background:#000;overflow:hidden;}
-	.v_list li .v_cover img{width:120px; vertical-align:middle;}
-	.v_list li .v_title{margin-top:6px;width:120px;height:23px;line-height:23px;overflow:hidden;}
-
-.r_list{padding:10px 5px 10px 20px;}
-	.r_list li{height:21px;line-height:21px;width:265px;overflow:hidden;white-space:nowrap;}	
+.flashpics{float:left;display:inline;padding:10px;width:280px;height:448px;background:#f0ebe5;margin-top:10px;margin-left:0px;}
+	.flashpics img{width:280px;}
+.new_topics{float:right;display:inline;width:320px;}
+	.new_topics_title{margin-top:10px;padding-left:10px;padding-bottom:6px;height:20px;line-height:20px;font-size:14px;font-weight:bold;background:url(/images/hatch.gif) repeat-x left bottom;}
+	.new_topics_list{margin-top:6px;}
+		.new_topics_list li{padding:0 6px;height:28px;line-height:28px;width:288px;overflow:hidden;white-space:nowrap;border-bottom:1px solid #EBEBEB;}
+		.new_topics_list li a{font-size:14px;}

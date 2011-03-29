@@ -5,9 +5,9 @@ class Admin::RunLogsController < Admin::AdminBackEndController
       RunLog.destroy_all(["id in (?)", params[:log_ids]])
     end
     if !params[:keyword].nil?
-      @logs = RunLog.paginate :conditions => ["log_path like ?", "%" + params[:keyword] + "%"], :page => params[:page], :per_page => 15, :order => "id desc"
+      @run_logs = RunLog.paginate :conditions => ["log_path like ?", "%" + params[:keyword] + "%"], :page => params[:page], :per_page => 15, :order => "id desc"
     else
-      @logs = RunLog.paginate :page => params[:page], :per_page => 15, :order => "id desc"
+      @run_logs = RunLog.paginate :page => params[:page], :per_page => 15, :order => "id desc"
     end
   end
 
