@@ -23,12 +23,11 @@ input, option, select, textarea, button {font-size: 12px;}
 	.logo{padding-top:10px;padding-left:20px;}
 	.search{}
 	
-#Nav{margin:0 auto;height:30px;line-height:30px;background:#e17ca4;}
+#Nav{margin:0 auto;background:#e17ca4;height:36px;}
 	.NavList{float:left;display:inline;}
-		.NavList li{float:left;display:inline;}
+		.NavList li{float:left;display:inline;height:36px;line-height:36px;}
 		.NavList li.current{background:#e17ca4;}
-		.NavList li.split{padding:12px 0;color:#dddddd;}
-		.NavList li a{font-size:12px;font-weight:normal;color:#FFF;padding:0 28px;border-left:1px solid #FFF;}
+		.NavList li a{font-size:14px;font-weight:normal;color:#FFF;padding:0 28px;border-left:1px solid #FFF;}
 		.NavList li a:hover{color:#FFF;text-decoration:underline;}
 		.NavList li.first a{border:0;}
 		.NavList li.current a{color:#FFF;font-weight:bold;}
@@ -59,5 +58,6 @@ input, option, select, textarea, button {font-size: 12px;}
 				.box_re_item a{color:#F60;}
 				.box_re_item a:hover{color:#FF2894;}
 			.box_item_list{margin-top:6px;}
-				.box_item_list li{float:left;display:inline;width:180px;line-height:20px;height:20px;margin-right:10px;overflow:hidden;white-space:nowrap;}
+				.box_item_list li{float:left;display:inline;width:180px;line-height:23px;height:23px;margin-right:10px;overflow:hidden;white-space:nowrap;}
+				.box_item_list li a{font-size:14px;}
 
