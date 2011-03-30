@@ -1,0 +1,66 @@
+<table align="CENTER" width="100%" border="0" cellspacing="0" cellpadding="0" class="main">
+	<tr>
+		<td align="left" height="30" class="data_td_bg">
+			&nbsp;&nbsp;&nbsp;管理导航：&nbsp;&nbsp;<a href="/admin/topics/index">文章管理</a>
+			&nbsp;|&nbsp; <a href="/admin/topics/new">文章添加</a>
+		</td>
+	</tr>
+</table>
+<table align="CENTER" width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td align="CENTER" valign="MIDDLE">&nbsp;</td>
+	</tr>
+</table>
+<%= form_for([:admin, @topic]) do |f| %>
+<table width="100%" border="0" cellspacing="1" cellpadding="2" bgcolor="#CCCCCC">
+	<tr>
+		<td class="top-nav" bgcolor="#2E9AC8" height="28" colspan="2">&nbsp;&nbsp;&nbsp;<img src="/images/admin/arr_right.gif">&nbsp;&nbsp;
+		<strong>新增</strong></td>
+	</tr>
+	<tr>
+		<td class="data_td_label" width="15%" align="RIGHT">分类：</td>
+		<td class="data_td_text"><%= f.select :category_id, @categories.map{|n|[n.name, n.id]}, :class => "input_text" %>
+		</td>
+	</tr>
+	<tr>
+		<td class="data_td_label" width="15%" align="RIGHT">标题：</td>
+		<td class="data_td_text"><input type="text" value="" name="topic[title]" id="topic_title" class="input_text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)">
+		</td>
+	</tr>
+	<tr>
+		<td class="data_td_label" width="15%" align="RIGHT">内容：</td>
+		<td class="data_td_text"><%= f.text_area :content, :style => "width:600px;height:360px;", :id => "kindeditor" %>
+		</td>
+	</tr>
+	<tr>
+		<td class="data_td_label" width="15%" align="RIGHT">图片：</td>
+		<td class="data_td_text"><input type="file" value="" name="topic[cover]" id="topic_cover" class="input_text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)">
+		</td>
+	</tr>
+	<tr>
+		<td class="data_td_label" width="15%" align="RIGHT">来源：</td>
+		<td class="data_td_text"><input type="text" value="" name="topic[pub_from]" id="topic_pub_from" class="input_text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)">
+		</td>
+	</tr>
+	<tr>
+		<td class="data_td_label" width="15%" align="RIGHT">编辑：</td>
+		<td class="data_td_text"><input type="text" value="" name="topic[editor]" id="topic_editor" class="input_text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)">
+		</td>
+	</tr>
+	<tr>
+		<td class="data_td_label" width="15%" align="RIGHT">简介：</td>
+		<td class="data_td_text"><%= f.text_area :summary, :style => "width:360px;height:120px;" %>
+		</td>
+	</tr>
+	<tr>
+		<td class="data_td_label" width="15%" align="RIGHT">时间：</td>
+		<td class="data_td_text"><input type="text" value="" name="topic[created_at]" id="topic_created_at" class="input_text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)">
+		</td>
+	</tr>
+	<tr>
+		<td bgcolor="#FFFFFF" colspan="2" align="CENTER" height="30">
+			<input type="submit" name="submit" value="提交" class="btn_ok">
+		</td>
+	</tr>
+</table>
+<% end %>

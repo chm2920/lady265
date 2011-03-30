@@ -11,7 +11,7 @@
 		<td align="CENTER" valign="MIDDLE">&nbsp;</td>
 	</tr>
 </table>
-<% form_tag "/admin/categories/edit/#{@category.id}", {:name => "vbform", :id => "vbform", :multipart=> true} do %>
+<%= form_for([:admin, @category]) do |f| %>
 <table width="100%" border="0" cellspacing="1" cellpadding="2" bgcolor="#CCCCCC">
 	<tr>
 		<td class="top-nav" bgcolor="#2E9AC8" height="28" colspan="2">&nbsp;&nbsp;&nbsp;<img src="/images/admin/arr_right.gif">&nbsp;&nbsp;

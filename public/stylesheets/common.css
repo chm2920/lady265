@@ -36,7 +36,7 @@ input, option, select, textarea, button {font-size: 12px;}
 
 #PageBody{height:auto !important;margin:auto;min-height:200px;text-align:left;padding-top:10px;}
 
-#Footer{margin:0 auto;margin-top:10px;text-align:left;border-top:1px solid #ebebeb;}
+#Footer{margin:0 auto;margin-top:10px;text-align:left;border-top:1px solid #fff4f8;}
 	#Foot{padding:26px 0 18px 0;text-align:center;font-family:Arial, Helvetica, sans-serif;color:#404040;}
 	
 #Main{float:left;display:inline;width:628px;}

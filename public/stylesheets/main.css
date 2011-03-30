@@ -1,7 +1,23 @@
 /* CSS Document */
 
 .flashpics{float:left;display:inline;padding:10px;width:280px;height:448px;background:#f0ebe5;margin-top:10px;margin-left:0px;}
-	.flashpics img{width:280px;}
+	.flashpics img{width:280px;height:380px;}
+/*---------------------------------------------------------------------------------*/
+/* FEATURED CONTENT SLIDER */
+/*---------------------------------------------------------------------------------*/
+#loopedSlider { float:left; background:#F0EBE5; width:280px; position:relative; clear:both; border:1px solid #ECEDE8; }
+#loopedSlider .featured-thumb { margin:0 0 6px 0; }
+.entry-title {line-height:30px;height:30px;width:270px;text-align:center;overflow:hidden; font-family:Georgia,serif; font-size:16px; font-weight:bold; }
+.entry-title a {color:#004276;}
+#loopedSlider .container { width:280px; height:432px; overflow:hidden; position:relative; }
+#loopedSlider .slides { position:absolute; top:0; left:0; }
+#loopedSlider .slides div { position:absolute; top:0; width:280px; display:none; }
+#loopedSlider ul.pagination { list-style-type:none; margin:0px auto 0px auto; padding:0; }
+#loopedSlider ul.pagination li { float:left; margin:0 7px; display:inline; }
+#loopedSlider ul.pagination a { display:block; width:12px; padding-top:12px; height:0; overflow:hidden; background-image:url(/images/slidernav.png); background-position:0 0; background-repeat:no-repeat; }
+#loopedSlider ul.pagination a:hover { background-position:0 -12px; }
+#loopedSlider ul.pagination li.active a { background-position:0 -23px }
+
 .new_topics{float:right;display:inline;width:320px;}
 	.new_topics_title{margin-top:10px;padding-left:10px;padding-bottom:6px;height:20px;line-height:20px;font-size:14px;font-weight:bold;background:url(/images/hatch.gif) repeat-x left bottom;}
 	.new_topics_list{margin-top:6px;}
