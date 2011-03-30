@@ -1,0 +1,32 @@
+
+	<div id="Main">
+		<div class="box">
+			<div class="box_title">
+				<h3><a href="/c/<%= @category.alias %>"><%= @category.name %></a></h3>
+			</div>
+			<div class="box_info clearfix">
+				<div class="box_info_imgs">
+					<% 4.times do %>
+					<div class="box_info_img_item">
+						<img src="/images/201103241453390.jpg" alt="" />
+						<div class="box_re_pic_item_txt"><a href="#">搞笑广告百事可乐功夫和尚恶搞啊</a></div>
+					</div>
+					<% end %>
+				</div>
+				<ul class="box_info_list">
+					<% 60.times do %>
+					<li>
+						<span>[2011-03-30]</span>
+						<a href="/<%= @category.alias %>/<%= @category.id %>.html" title="搞笑广告百事可乐功夫和尚恶搞啊">搞笑广告百事可乐功夫和尚恶搞啊</a>
+					</li>
+					<% end %>
+				</ul>
+			</div>
+			<div class="box_pagination">
+				<a href="#" class="current">1</a><a href="#">2</a>
+			</div>
+		</div>
+	</div>
+	<div id="Side">
+		<%= render "/partials/side" %>
+	</div>

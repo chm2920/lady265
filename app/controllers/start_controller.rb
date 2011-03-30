@@ -12,7 +12,9 @@ class StartController < ApplicationController
   end
   
   def topic
-    
+    @cur = params[:c]
+    @category = Category.find_by_alias(params[:c])
+    #@topic = Topic.find(params[:id])
   end
   
 private

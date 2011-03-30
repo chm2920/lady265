@@ -3,6 +3,7 @@ Lady256::Application.routes.draw do
   resources :categories
   
   match "c/:id" => "start#category"
+  match "(:c)/(:id).html" => "start#topic"
   
   match "admin" => "account#login"
   get "account/main"

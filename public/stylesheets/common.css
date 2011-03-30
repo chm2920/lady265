@@ -36,16 +36,23 @@ input, option, select, textarea, button {font-size: 12px;}
 
 #PageBody{height:auto !important;margin:auto;min-height:200px;text-align:left;padding-top:10px;}
 
-#Footer{margin:0 auto;margin-top:10px;text-align:left;border-top:1px solid #fff4f8;}
+#Footer{margin:0 auto;margin-top:10px;text-align:left;border-top:1px solid #e17ca4;}
 	#Foot{padding:26px 0 18px 0;text-align:center;font-family:Arial, Helvetica, sans-serif;color:#404040;}
 	
 #Main{float:left;display:inline;width:628px;}
 #Side{float:right;display:inline;width:320px;}
-.box{border:1px solid #EBEBEB;margin-top:10px;}
+.box{border:1px solid #e17ca4;margin-top:10px;}
 	.box_title{padding:8px 18px;background:#fff4f8;border-bottom:1px solid #EBEBEB;}
 	.box_title h3{font-size:18px;font-weight:bold;color:#E74C97;}
 	.box_title h3 a{color:#E74C97;}
-	.box_content{padding:10px 20px 10px 20px;}
+	.box_title h4{font-size:12px;font-weight:bold;}
+	.box_title h4 a{color:#E74C97;}
+	.box_title h5{font-size:12px;font-weight:normal;color:#666;background:url(/images/arr_path.gif) no-repeat left center;padding-left:16px;}
+	.box_title h5 a{color:#333;}
+	.box_title span{float:right;}
+	.box_title span a{color:#666;padding:0 4px;}
+	.box_title span a.more{color:#999;padding:0 4px;}
+	.box_content{padding:10px 20px 2px 20px;}
 		.box_re_pic_item{float:left;display:inline;width:160px;padding:2px;background:#b0b4d1;}
 			.box_re_pic_item img{width:160px;height:220px;}
 			.box_re_pic_item_txt{height:23px;line-height:23px;width:156px;overflow:hidden;white-space:nowrap;text-align:center;}
@@ -57,7 +64,18 @@ input, option, select, textarea, button {font-size: 12px;}
 				.box_re_item p{margin-top:4px;color:#666;line-height:20px; text-indent:22px;}
 				.box_re_item a{color:#F60;}
 				.box_re_item a:hover{color:#FF2894;}
-			.box_item_list{margin-top:6px;}
-				.box_item_list li{float:left;display:inline;width:180px;line-height:23px;height:23px;margin-right:10px;overflow:hidden;white-space:nowrap;}
+			.box_item_list{margin-top:6px;padding-bottom:6px;}
+				.box_item_list li{float:left;display:inline;width:180px;padding-left:8px;background:url(/images/arr.gif) no-repeat left center;line-height:23px;height:23px;margin-right:10px;overflow:hidden;white-space:nowrap;}
 				.box_item_list li a{font-size:14px;}
+	.box_info{padding:20px 20px 2px 20px;}
+		.box_info_imgs{float:left;display:inline;width:160px;padding:2px;}
+			.box_info_img_item{background:#b0b4d1;margin-bottom:20px;}
+		.box_info_list{float:right;display:inline;width:398px;}
+			.box_info_list li{padding-left:8px;background:url(/images/arr.gif) no-repeat left center;line-height:28px;height:28px;border-bottom:1px dashed #EBEBEB;}
+			.box_info_list li a{font-size:14px;}
+			.box_info_list li span{float:right;padding-right:8px;color:#666;}
+	.box_pagination{padding:20px 0;text-align:center;}
+		.box_pagination a{border:1px solid #e17ca4;padding:4px 6px;color:#333;margin-right:6px;}
+		.box_pagination a.current{background:#fff4f8;}
+		.box_pagination a:hover{background:#fff4f8;}
 
