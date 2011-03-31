@@ -5,8 +5,8 @@ require 'iconv'
 error_url = Array.new()
 topics = Array.new() 
 begin
-	1.downto 1 do |page|
-		url = "http://clothing.lady8844.com/clothing/star/index.html"
+	65.downto 1 do |page|
+		url = "http://clothing.lady8844.com/clothing/star/index_#{page}.html"
 		puts url
 		puts "#{page} ========================================================================="
 		gets = open(url).read

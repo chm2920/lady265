@@ -20,6 +20,7 @@
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr class="data_tr">
 					<td class="data_td_label" width="5%" align="CENTER">ID</td>
+					<td class="data_td_label" width="10%" align="CENTER">分类</td>
 					<td class="data_td_label" align="CENTER">名称</td>
 					<td class="data_td_label" width="10%" align="CENTER">点击数</td>
 					<td class="data_td_label" width="20%" align="CENTER">时间</td>
@@ -32,11 +33,12 @@
 						@topics.each do |topic|
 				%>
 				<tr>
-					<td colspan="5" class="border_bottom"></td>
+					<td colspan="6" class="border_bottom"></td>
 				</tr>
 				<tr class="data_tr" onmouseover="this.style.backgroundColor='#F4E088';this.style.borderColor='#003c9c';this.style.cursor='default';" onmouseout="this.style.backgroundColor='';this.style.borderColor='';">
 					<td align="CENTER"><%= check_box_tag 'topic_ids[]', topic.id %></td>
-					<td align="CENTER">[<%= topic.category.name %>]<%= topic.title %></td>
+					<td align="CENTER"><%= topic.category.name %></td>
+					<td align="CENTER"><a href="/<%= topic.category.alias %>/<%= topic.id %>.html" target="_blank"><%= topic.title %></a></td>
 					<td align="CENTER"><%= topic.hits %></td>
 					<td align="CENTER"><%= topic.created_at.strftime("%Y-%m-%d") %></td>
 					<td align="CENTER">
@@ -47,10 +49,10 @@
 						end
 				%>
 				<tr>
-					<td class="border_bottom" colspan="5" align="CENTER"></td>
+					<td class="border_bottom" colspan="6" align="CENTER"></td>
 				</tr>
 				<tr class="data_tr">
-					<td colspan="5" align="CENTER" height="30">
+					<td colspan="6" align="CENTER" height="30">
 						<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="page">
 							<tr>
 								<td width="45%">&nbsp;
@@ -67,10 +69,10 @@
 					else
 				%>
 				<tr>
-					<td class="border_bottom" colspan="5" align="CENTER"></td>
+					<td class="border_bottom" colspan="6" align="CENTER"></td>
 				</tr>
 				<tr class="data_tr">
-					<td colspan="5" align="left" height="30">&nbsp;还没有内容。</td>
+					<td colspan="6" align="left" height="30">&nbsp;还没有内容。</td>
 				</tr>
 				<%
 					end

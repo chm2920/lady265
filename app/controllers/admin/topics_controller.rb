@@ -4,7 +4,7 @@ class Admin::TopicsController < Admin::AdminBackEndController
     if !params[:topic_ids].nil?
       Topic.destroy_all(["id in (?)", params[:topic_ids]])
     end
-    @topics = Topic.paginate :page => params[:page], :per_page => 15, :order => "id desc"
+    @topics = Topic.paginate :page => params[:page], :per_page => 15, :order => "created_at desc"
   end
 
   def new
@@ -47,7 +47,9 @@ class Admin::TopicsController < Admin::AdminBackEndController
       name = xml.original_filename
       directory = "#{RAILS_ROOT}/public/data"
       path = File.join(directory, name)
-      xml_data = File.open(path, "wb") { |f| f.write(xml.read) }
+      File.open(path, "wb") { |f| f.write(xml.read) }
+      
+      xml_data = File.open(path, "r:utf-8")
       result = ""
       xml_data.each_line do |line|
         result += line
