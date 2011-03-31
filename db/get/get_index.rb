@@ -5,10 +5,9 @@ require 'iconv'
 error_url = Array.new()
 posts = Array.new() 
 begin
-	42.downto 1 do |page|
-		url = "http://clothing.lady8844.com/clothing/shoes/index_#{page}.html"
+		url = "http://clothing.lady8844.com/clothing/shoes/index.html"
 		puts url
-		puts "#{page} ========================================================================="
+		puts "========================================================================="
 		gets = open(url).read
 		i = 0
 		
@@ -33,12 +32,11 @@ begin
 			posts << post
 			i += 1
 		end	
-	end
 	
 	posts.reverse!
 rescue
 ensure
-	f = File.new("shoes.xml","w:UTF-8")
+	f = File.new("shoes_index.xml","w:UTF-8")
 #	f.puts "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
 	f.puts "<articles>"
 	for node in posts

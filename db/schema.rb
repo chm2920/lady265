@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110327150114) do
+ActiveRecord::Schema.define(:version => 20110331125314) do
 
   create_table "admins", :force => true do |t|
     t.string   "adminname"
@@ -29,6 +29,16 @@ ActiveRecord::Schema.define(:version => 20110327150114) do
     t.string   "data_content_type"
     t.integer  "data_file_size"
     t.datetime "data_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.integer  "category_id"
+    t.integer  "topic_id"
+    t.string   "title"
+    t.string   "url"
+    t.integer  "is_get",      :default => 0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

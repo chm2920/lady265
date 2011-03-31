@@ -5,20 +5,20 @@ require 'iconv'
 error_url = Array.new()
 posts = Array.new() 
 begin
-	42.downto 1 do |page|
-		url = "http://clothing.lady8844.com/clothing/shoes/index_#{page}.html"
+	22.downto 1 do |page|
+		url = "http://clothing.lady8844.com/streetsnap/index_#{page}.html"
 		puts url
 		puts "#{page} ========================================================================="
 		gets = open(url).read
 		i = 0
 		
-		gets.scan(/<a target="_blank" href="(.*?).html" title="(.*?)">(.*?)<\/a><span class="date">(.*?)<\/span>/) do |a, b, c, d|
+		gets.scan(/<a href="(.*?).html" target="_blank">(.*?)<\/a><\/td>(.*?)\n(.*?)<td widht="20%">(.*?)<\/td>/) do |a, b, c, d, e|
 			post = Hash.new
 			sub_url = a.to_s + ".html"
 			post["sub_url"] = sub_url
 			puts i.to_s + "_" + sub_url
 			post["title"] = b.to_s.force_encoding('UTF-8').gsub('&', "_")
-			post["date"] = d.to_s.force_encoding('UTF-8').gsub('[', "").gsub(']', "")
+			post["date"] = e.to_s.force_encoding('UTF-8').gsub('[', "").gsub(']', "")
 #			begin
 #				get_content = open(sub_url).read		
 #				get_content.scan(/<td class="pad_lrtb28 f14_black1 line_h28">(.*?)<\/td>/m) do |content|
@@ -38,7 +38,7 @@ begin
 	posts.reverse!
 rescue
 ensure
-	f = File.new("shoes.xml","w:UTF-8")
+	f = File.new("streetsnap.xml","w:UTF-8")
 #	f.puts "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
 	f.puts "<articles>"
 	for node in posts

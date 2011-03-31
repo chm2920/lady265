@@ -2,8 +2,15 @@
 <table align="CENTER" width="100%" border="0" cellspacing="0" cellpadding="0" class="main">
 	<tr>
 		<td align="left" height="30" class="data_td_bg">
-			&nbsp;&nbsp;&nbsp;管理导航：&nbsp;&nbsp;<a href="/admin/topics/index">文章管理</a>
-			&nbsp;|&nbsp; <a href="/admin/topics/new">文章添加</a>
+			&nbsp;&nbsp;&nbsp;管理导航：&nbsp;&nbsp;<a href="/admin/posts/index">文章管理</a>
+			&nbsp;|&nbsp; <a href="/admin/posts/new">文章添加</a>
+			&nbsp;|&nbsp; <a href="/admin/posts/all">全部文章</a>
+		</td>
+		<td align="right" style="padding-right:10px;">
+		<% form_tag({:action => "index"}, {:name => "sform", :id => "sform"}) do %>
+		<input type="text" name="keyword" />
+		<input type="submit" value="搜索" name="submit" style="padding:2px 10px;" />
+		<% end %>
 		</td>
 	</tr>
 </table>
@@ -22,27 +29,27 @@
 					<td class="data_td_label" width="5%" align="CENTER">ID</td>
 					<td class="data_td_label" width="10%" align="CENTER">分类</td>
 					<td class="data_td_label" align="CENTER">名称</td>
-					<td class="data_td_label" width="10%" align="CENTER">点击数</td>
-					<td class="data_td_label" width="20%" align="CENTER">时间</td>
-					<td class="data_td_label" width="20%" align="CENTER">管理</td>
+					<td class="data_td_label" width="40%" align="CENTER">地址</td>
+					<td class="data_td_label" width="10%" align="CENTER">时间</td>
+					<td class="data_td_label" width="15%" align="CENTER">管理</td>
 				</tr>
 				<%
-					if @topics.length>0
+					if @posts.length>0
 				%>
 				<%
-						@topics.each do |topic|
+						@posts.each do |post|
 				%>
 				<tr>
 					<td colspan="6" class="border_bottom"></td>
 				</tr>
 				<tr class="data_tr" onmouseover="this.style.backgroundColor='#F4E088';this.style.borderColor='#003c9c';this.style.cursor='default';" onmouseout="this.style.backgroundColor='';this.style.borderColor='';">
-					<td align="CENTER"><%= check_box_tag 'topic_ids[]', topic.id %></td>
-					<td align="CENTER"><%= topic.category.name %></td>
-					<td align="CENTER"><a href="/<%= topic.category.alias %>/<%= topic.id %>.html" target="_blank"><%= topic.title %></a></td>
-					<td align="CENTER"><%= topic.hits %></td>
-					<td align="CENTER"><%= topic.created_at.strftime("%Y-%m-%d") %></td>
+					<td align="CENTER"><%= check_box_tag 'post_ids[]', post.id %></td>
+					<td align="CENTER"><%= post.category.name if post.category %></td>
+					<td align="CENTER"><a href="/<%= post.category.alias if post.category %>/<%= post.id %>.html" target="_blank"><%= post.title %></a></td>
+					<td align="CENTER"><%= post.url %></td>
+					<td align="CENTER"><%= post.created_at.strftime("%Y-%m-%d") %></td>
 					<td align="CENTER">
-						<a href="/admin/topics/<%= topic.id %>/edit">修改</a>&nbsp;|&nbsp;<%= link_to "删除", {:action => "destroy", :id => topic}, :confirm => "确定删除？", :method => "delete" %>
+						<a href="/admin/posts/<%= post.id %>/edit">修改</a>&nbsp;|&nbsp;<%= link_to "删除", {:action => "destroy", :id => post}, :confirm => "确定删除？", :method => "delete" %>
 					</td>
 				</tr>
 				<%
@@ -56,11 +63,11 @@
 						<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="page">
 							<tr>
 								<td width="45%">&nbsp;
-									<input type="button" name="selectAll" value="全选" onClick="CheckAll(vbform,'topic_ids[]');" class="a_button">
-									&nbsp;<input type="button" name="selectOther" value="反选" onClick="CheckOthers(vbform,'topic_ids[]');" class="a_button">
+									<input type="button" name="selectAll" value="全选" onClick="CheckAll(vbform,'post_ids[]');" class="a_button">
+									&nbsp;<input type="button" name="selectOther" value="反选" onClick="CheckOthers(vbform,'post_ids[]');" class="a_button">
 									&nbsp;<input type="submit" name="delete_all" value="全部删除" onClick="return checkForm(vbform);" class="b_button">
 								</td>
-								<td align="center"><%= will_paginate @topics %></td>
+								<td align="center"><%= will_paginate @posts %></td>
 							</tr>
 						</table>
 					</td>

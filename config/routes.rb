@@ -16,9 +16,14 @@ Lady256::Application.routes.draw do
     resources :categories
     get "topics/index"
     post "topics/index"
-    get "topics/import"
-    post "topics/import"
     resources :topics
+    get "posts/index"
+    post "posts/index"
+    get "posts/all"
+    post "posts/all"
+    get "posts/import"
+    post "posts/import"
+    resources :posts
     get "run_logs/index"
     post "run_logs/index"
     resources :run_logs
