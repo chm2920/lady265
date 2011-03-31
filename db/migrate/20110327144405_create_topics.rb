@@ -5,7 +5,7 @@ class CreateTopics < ActiveRecord::Migration
       t.string :title
       t.text :content
       t.text :summary
-      t.integer :hits
+      t.integer :hits, :null => false, :default => 0
       t.string :pub_from
       t.string :editor
       t.string :cover_file_name

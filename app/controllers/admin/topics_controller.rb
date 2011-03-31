@@ -41,4 +41,28 @@ class Admin::TopicsController < Admin::AdminBackEndController
     redirect_to :action => "index"
   end
   
+  def import
+    if request.post?
+      xml = params[:xml]
+      name = xml.original_filename
+      directory = "#{RAILS_ROOT}/public/data"
+      path = File.join(directory, name)
+      xml_data = File.open(path, "wb") { |f| f.write(xml.read) }
+      result = ""
+      xml_data.each_line do |line|
+        result += line
+      end
+      hsh = Hash.from_xml(result)
+      for topic in hsh["articles"]["article"]
+        t = Topic.new
+        t.category_id = 1
+        t.title = topic["title"]
+        t.content = topic["url"]
+        t.created_at = topic["date"]
+        t.save
+      end
+      render :text => "ok"
+    end
+  end
+  
 end
