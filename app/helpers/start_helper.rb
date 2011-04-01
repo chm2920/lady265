@@ -18,4 +18,23 @@ module StartHelper
     simple_format(nav_list).gsub("<p>", "").gsub("</p>", "")
   end
   
+  def topic_show_page(topic, page_count, page)
+    id = topic.id
+    date = topic.created_at.strftime("%Y%m%d")
+    if page==1
+      links = "<a href='#{date}_#{id}.html' class='current'>1</a>"
+    else
+      links = "<a href='#{date}_#{id}.html'>1</a>"
+    end    
+    2.upto page_count do |i|
+      if page==i
+        p_link = "<a href='#{date}_#{id}_#{i}.html' class='current'>#{i}</a>"
+      else
+        p_link = "<a href='#{date}_#{id}_#{i}.html'>#{i}</a>"
+      end
+      links += p_link
+    end
+    simple_format links
+  end
+  
 end

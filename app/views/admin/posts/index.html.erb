@@ -5,6 +5,7 @@
 			&nbsp;&nbsp;&nbsp;管理导航：&nbsp;&nbsp;<a href="/admin/posts/index">文章管理</a>
 			&nbsp;|&nbsp; <a href="/admin/posts/new">文章添加</a>
 			&nbsp;|&nbsp; <a href="/admin/posts/all">全部文章</a>
+			&nbsp;|&nbsp; <a href="/admin/posts/get_article">采集文章</a>
 		</td>
 		<td align="right" style="padding-right:10px;">
 		<% form_tag({:action => "index"}, {:name => "sform", :id => "sform"}) do %>
@@ -29,9 +30,9 @@
 					<td class="data_td_label" width="5%" align="CENTER">ID</td>
 					<td class="data_td_label" width="10%" align="CENTER">分类</td>
 					<td class="data_td_label" align="CENTER">名称</td>
-					<td class="data_td_label" width="40%" align="CENTER">地址</td>
+					<td class="data_td_label" width="45%" align="CENTER">地址</td>
 					<td class="data_td_label" width="10%" align="CENTER">时间</td>
-					<td class="data_td_label" width="15%" align="CENTER">管理</td>
+					<td class="data_td_label" width="10%" align="CENTER">管理</td>
 				</tr>
 				<%
 					if @posts.length>0
@@ -45,7 +46,7 @@
 				<tr class="data_tr" onmouseover="this.style.backgroundColor='#F4E088';this.style.borderColor='#003c9c';this.style.cursor='default';" onmouseout="this.style.backgroundColor='';this.style.borderColor='';">
 					<td align="CENTER"><%= check_box_tag 'post_ids[]', post.id %></td>
 					<td align="CENTER"><%= post.category.name if post.category %></td>
-					<td align="CENTER"><a href="/<%= post.category.alias if post.category %>/<%= post.id %>.html" target="_blank"><%= post.title %></a></td>
+					<td align="CENTER"><a href="/<%= post.category.alias if post.category %>/<%= post.created_at.strftime("%Y%m%d") %>_<%= post.id %>.html" target="_blank"><%= post.title %></a></td>
 					<td align="CENTER"><%= post.url %></td>
 					<td align="CENTER"><%= post.created_at.strftime("%Y-%m-%d") %></td>
 					<td align="CENTER">

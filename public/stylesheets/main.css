@@ -43,6 +43,6 @@
 	.topic_content a{color:#FF3875;text-decoration:underline;}
 .topic_pagination{margin-top:20px;text-align:center;}
 	.topic_pagination a{border:1px solid #e17ca4;padding:4px 6px;color:#333;margin-right:6px;}
-	.topic_pagination a.current{background:#fff4f8;}
-	.topic_pagination a:hover{background:#fff4f8;}
+	.topic_pagination a.current{border:1px solid #fff4f8;background:#e17ca4;color:#FFF;}
+	.topic_pagination a:hover{border:1px solid #fff4f8;background:#e17ca4;color:#FFF;}
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>都市女性 lady265.com - 女性|时尚|美容</title>
+  <title><%= @page_title + " - " if !@page_title.nil? %>都市女性 lady265.com - 女性|时尚|美容</title>
   <%= stylesheet_link_tag "common", "main" %>
   <%= javascript_include_tag "jquery-1.3.2.min", "loopedslider" %>
   <%= csrf_meta_tag %>

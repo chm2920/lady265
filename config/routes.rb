@@ -3,7 +3,8 @@ Lady256::Application.routes.draw do
   resources :categories
   
   match "c/:id" => "start#category"
-  match "(:c)/(:id).html" => "start#topic"
+  match "(:c)/(:date)_(:id)_(:page).html" => "start#topic"
+  match "(:c)/(:date)_(:id).html" => "start#topic"
   
   match "admin" => "account#login"
   get "account/main"
@@ -23,6 +24,7 @@ Lady256::Application.routes.draw do
     post "posts/all"
     get "posts/import"
     post "posts/import"
+    get "posts/get_article"
     resources :posts
     get "run_logs/index"
     post "run_logs/index"
