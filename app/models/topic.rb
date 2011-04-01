@@ -15,4 +15,8 @@ class Topic < ActiveRecord::Base
     :url => "/uploads/:class/:attachment/:id_:style.jpg",
     :path => ":rails_root/public/uploads/:class/:attachment/:id_:style.jpg"
     
+  def show_url
+    "/#{self.category.alias}/#{self.created_at.strftime("%Y%m%d")}_#{self.id}.html"
+  end
+    
 end

@@ -5,22 +5,22 @@
 				<div id="loopedSlider">
 					<div class="container">
 						<div class="slides">
-							<% 3.times do %>
+							<% for topic in @slide_topics %>
 							<div>
 								<p class="featured-thumb">
-									<a href="#"><img src="/images/201103241633160.jpg" alt="" /></a>
+									<a href="<%= topic.show_url %>" target="_blank"><img src="<%= topic.cover_file_name %>" alt="<%= topic.title %>" /></a>
 								</p>
 								<h2 class="entry-title">
-									<a href="http://www.gamelook.com.cn/?p=32034" title="Permalink to 谷歌宣布Android3.0暂停开源:合作限大厂" rel="bookmark">谷歌宣布Android3.0暂停开源:合作限大厂</a>
+									<a href="<%= topic.show_url %>" target="_blank" title="<%= topic.title %>" rel="bookmark"><%= topic.title %></a>
 								</h2>
 							</div>
 							<% end %>
 						</div>
 					</div>
 					<ul class="pagination">
-						<li><a href="#" rel="1">1</a></li>
-						<li><a href="#" rel="2">2</a></li>
-						<li><a href="#" rel="3">3</a></li>
+						<% 1.upto @slide_topics.length do |i| %>
+						<li><a href="#" rel="1"><%= i %></a></li>
+						<% end %>
 					</ul>
 				</div>
 				<script type="text/javascript" charset="utf-8">
@@ -32,136 +32,46 @@
 			<div class="new_topics">
 				<div class="new_topics_title">最新时尚</div>
 				<ul class="new_topics_list">
-					<% 15.times do %>
-					<li><a href="#">搞笑广告百事可乐功夫和尚恶搞啊搞笑广告百事可乐功夫和尚恶搞啊</a></li>
+					<% for topic in @new_topics %>
+					<li><a href="<%= topic.show_url %>"><%= topic.title %></a></li>
 					<% end %>
 				</ul>
 			</div>
 		</div>
+		<% 0.upto 3 do |c_id| %>
+		<% @s1_topics = @topics_list[c_id] %>
 		<div class="box">
 			<div class="box_title">
-				<h3><a href="#">明星装扮</a></h3>
+				<h3><a href="#"><%= Category.find(c_id+1).name %></a></h3>
 			</div>
 			<div class="box_content clearfix">
 				<div class="box_re_pic_item">
-					<img src="/images/201103241453390.jpg" alt="" />
-					<div class="box_re_pic_item_txt"><a href="#">搞笑广告百事可乐功夫和尚恶搞啊</a></div>
+					<img src="<%= @s1_topics[0].cover %>" alt="" />
+					<div class="box_re_pic_item_txt"><a href="<%= @s1_topics[0].show_url %>"><%= @s1_topics[0].title %></a></div>
 				</div>
 				<div class="box_items">
 					<div class="box_re_item">
-						<h4><a href="#">搞笑广告百事可乐功夫和尚恶搞啊</a></h4>
-						<p>搞笑广告百事可乐功夫和尚恶搞啊搞笑搞笑广告百事可乐功夫和尚恶搞啊广告百事可乐功夫和尚恶搞啊...<a href="#">[更多详细]</a></p>
+						<h4><a href="<%= @s1_topics[1].show_url %>"><%= @s1_topics[1].title %></a></h4>
+						<p><%= @s1_topics[1].summary %>...<a href="<%= @s1_topics[1].show_url %>">[更多详细]</a></p>
 					</div>
 					<ul class="box_item_list clearfix" style="border-bottom:1px dashed #EBEBEB;">
-						<% 8.times do %>
+						<% 2.upto 9 do |i| %>
 						<li>
-							<a href="#" title="搞笑广告百事可乐功夫和尚恶搞啊">搞笑广告百事可乐功夫和尚恶搞啊</a>
+							<a href="<%= @s1_topics[i].show_url %>" title="<%= @s1_topics[i].title %>"><%= @s1_topics[i].title %></a>
 						</li>
 						<% end %>
 					</ul>
 					<ul class="box_item_list clearfix">
-						<% 8.times do %>
+						<% 10.upto 17 do |i| %>
 						<li>
-							<a href="#" title="搞笑广告百事可乐功夫和尚恶搞啊">搞笑广告百事可乐功夫和尚恶搞啊</a>
+							<a href="<%= @s1_topics[i].show_url %>" title="<%= @s1_topics[i].title %>"><%= @s1_topics[i].title %></a>
 						</li>
 						<% end %>
 					</ul>
 				</div>
 			</div>
 		</div>
-		<div class="box">
-			<div class="box_title">
-				<h3><a href="#">流行服饰</a></h3>
-			</div>
-			<div class="box_content clearfix">
-				<div class="box_re_pic_item">
-					<img src="/images/201103241453390.jpg" alt="" />
-					<div class="box_re_pic_item_txt"><a href="#">搞笑广告百事可乐功夫和尚恶搞啊</a></div>
-				</div>
-				<div class="box_items">
-					<div class="box_re_item">
-						<h4><a href="#">搞笑广告百事可乐功夫和尚恶搞啊</a></h4>
-						<p>搞笑广告百事可乐功夫和尚恶搞啊搞笑搞笑广告百事可乐功夫和尚恶搞啊广告百事可乐功夫和尚恶搞啊...<a href="#">[更多详细]</a></p>
-					</div>
-					<ul class="box_item_list clearfix" style="border-bottom:1px dashed #EBEBEB;">
-						<% 8.times do %>
-						<li>
-							<a href="#" title="搞笑广告百事可乐功夫和尚恶搞啊">搞笑广告百事可乐功夫和尚恶搞啊</a>
-						</li>
-						<% end %>
-					</ul>
-					<ul class="box_item_list clearfix">
-						<% 8.times do %>
-						<li>
-							<a href="#" title="搞笑广告百事可乐功夫和尚恶搞啊">搞笑广告百事可乐功夫和尚恶搞啊</a>
-						</li>
-						<% end %>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="box">
-			<div class="box_title">
-				<h3><a href="#">搭配学堂</a></h3>
-			</div>
-			<div class="box_content clearfix">
-				<div class="box_re_pic_item">
-					<img src="/images/201103241453390.jpg" alt="" />
-					<div class="box_re_pic_item_txt"><a href="#">搞笑广告百事可乐功夫和尚恶搞啊</a></div>
-				</div>
-				<div class="box_items">
-					<div class="box_re_item">
-						<h4><a href="#">搞笑广告百事可乐功夫和尚恶搞啊</a></h4>
-						<p>搞笑广告百事可乐功夫和尚恶搞啊搞笑搞笑广告百事可乐功夫和尚恶搞啊广告百事可乐功夫和尚恶搞啊...<a href="#">[更多详细]</a></p>
-					</div>
-					<ul class="box_item_list clearfix" style="border-bottom:1px dashed #EBEBEB;">
-						<% 8.times do %>
-						<li>
-							<a href="#" title="搞笑广告百事可乐功夫和尚恶搞啊">搞笑广告百事可乐功夫和尚恶搞啊</a>
-						</li>
-						<% end %>
-					</ul>
-					<ul class="box_item_list clearfix">
-						<% 8.times do %>
-						<li>
-							<a href="#" title="搞笑广告百事可乐功夫和尚恶搞啊">搞笑广告百事可乐功夫和尚恶搞啊</a>
-						</li>
-						<% end %>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="box">
-			<div class="box_title">
-				<h3><a href="#">环球街拍</a></h3>
-			</div>
-			<div class="box_content clearfix">
-				<div class="box_re_pic_item">
-					<img src="/images/201103241453390.jpg" alt="" />
-					<div class="box_re_pic_item_txt"><a href="#">搞笑广告百事可乐功夫和尚恶搞啊</a></div>
-				</div>
-				<div class="box_items">
-					<div class="box_re_item">
-						<h4><a href="#">搞笑广告百事可乐功夫和尚恶搞啊</a></h4>
-						<p>搞笑广告百事可乐功夫和尚恶搞啊搞笑搞笑广告百事可乐功夫和尚恶搞啊广告百事可乐功夫和尚恶搞啊...<a href="#">[更多详细]</a></p>
-					</div>
-					<ul class="box_item_list clearfix" style="border-bottom:1px dashed #EBEBEB;">
-						<% 8.times do %>
-						<li>
-							<a href="#" title="搞笑广告百事可乐功夫和尚恶搞啊">搞笑广告百事可乐功夫和尚恶搞啊</a>
-						</li>
-						<% end %>
-					</ul>
-					<ul class="box_item_list clearfix">
-						<% 8.times do %>
-						<li>
-							<a href="#" title="搞笑广告百事可乐功夫和尚恶搞啊">搞笑广告百事可乐功夫和尚恶搞啊</a>
-						</li>
-						<% end %>
-					</ul>
-				</div>
-			</div>
-		</div>
+		<% end %>
 	</div>
 	<div id="Side">
 		<%= render "/partials/side" %>

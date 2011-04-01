@@ -1,3 +1,4 @@
+# coding: utf-8  
 class Admin::PostsController < Admin::AdminBackEndController
   
   def import
@@ -27,8 +28,12 @@ class Admin::PostsController < Admin::AdminBackEndController
   end
   
   def get_article
-    @post = Post.first
-    get_content(@post)
+    2.upto 7 do |i|
+      @posts = Post.find(:all, :conditions => "category_id = #{i} and is_get = 0", :order => "created_at desc", :limit => 20)
+      for post in @posts
+        get_content(post)
+      end
+    end
     #Topic.destroy_all
     redirect_to :action => :index
   end
@@ -96,6 +101,9 @@ class Admin::PostsController < Admin::AdminBackEndController
         topic.category_id = post.category_id
         topic.title = post.title
         topic.created_at = post.created_at
+        topic.pub_from = "爱美网"
+        topic.editor = "hello_su"
+        topic.hits = 0
         require 'open-uri'
         require 'iconv'
         url = post.url
@@ -147,22 +155,26 @@ class Admin::PostsController < Admin::AdminBackEndController
         Dir.mkdir(full_directory)
         
         cs = content.scan(/src="(.*?)"/)
-        cs.each do |h|
-          image_file = h[0].to_s
-          puts image_file
-          name = Time.now.strftime("%Y%m%d%H%M%S") + rand(100).to_s + "." + image_file.split(".").last
-          path = File.join(full_directory, name)
-          File.open(path, "wb") { |f| f.write(open(image_file).read) }
-          puts directory + name
-          content = content.gsub(image_file, directory + name)
+        if cs.length>0
+          cs.each do |h|
+            image_file = h[0].to_s
+            puts image_file
+            name = Time.now.strftime("%Y%m%d%H%M%S") + rand(100).to_s + "." + image_file.split(".").last
+            path = File.join(full_directory, name)
+            File.open(path, "wb") { |f| f.write(open(image_file).read) }
+            puts directory + name
+            content = content.gsub(image_file, directory + name)
+          end
+          
+          topic.content = content
+          puts "---------------"
+          puts cs[0][0].to_s
+          topic.cover_file_name = cs[0][0].to_s
         end
-        
-        topic.content = content
-        topic.cover = cs
         topic.save!
         
         post.topic_id = topic.id
-        #post.is_get = 1
+        post.is_get = 1
         post.save!
       rescue Exception => e
         ActiveRecord::Rollback
