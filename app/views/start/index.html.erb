@@ -33,38 +33,39 @@
 				<div class="new_topics_title">最新时尚</div>
 				<ul class="new_topics_list">
 					<% for topic in @new_topics %>
-					<li><a href="<%= topic.show_url %>"><%= topic.title %></a></li>
+					<li><a href="<%= topic.show_url %>" title="<%= topic.title %>" target="_blank"><%= topic.title %></a></li>
 					<% end %>
 				</ul>
 			</div>
 		</div>
-		<% 0.upto 3 do |c_id| %>
-		<% @s1_topics = @topics_list[c_id] %>
+		<% 1.upto 4 do |c_id| %>
+		<% @category = Category.find(c_id) %>
+		<% @list_topics = Topic.index_news_list(c_id, 18) %>
 		<div class="box">
 			<div class="box_title">
-				<h3><a href="#"><%= Category.find(c_id+1).name %></a></h3>
+				<h3><a href="/<%= @category.alias %>"><%= @category.name %></a></h3>
 			</div>
 			<div class="box_content clearfix">
 				<div class="box_re_pic_item">
-					<img src="<%= @s1_topics[0].cover %>" alt="" />
-					<div class="box_re_pic_item_txt"><a href="<%= @s1_topics[0].show_url %>"><%= @s1_topics[0].title %></a></div>
+					<a href="<%= @list_topics[0].show_url %>" title="<%= @list_topics[0].title %>" target="_blank"><img src="<%= @list_topics[0].cover_file_name %>" alt="<%= @list_topics[0].title %>" /></a>
+					<div class="box_re_pic_item_txt"><a href="<%= @list_topics[0].show_url %>" title="<%= @list_topics[0].title %>" target="_blank"><%= @list_topics[0].title %></a></div>
 				</div>
 				<div class="box_items">
 					<div class="box_re_item">
-						<h4><a href="<%= @s1_topics[1].show_url %>"><%= @s1_topics[1].title %></a></h4>
-						<p><%= @s1_topics[1].summary %>...<a href="<%= @s1_topics[1].show_url %>">[更多详细]</a></p>
+						<h4><a href="<%= @list_topics[1].show_url %>" title="<%= @list_topics[1].title %>" target="_blank"><%= @list_topics[1].title %></a></h4>
+						<p><%= truncate(@list_topics[1].summary, :length => 56).gsub(/<b(.*?)b>/, "") %>...<a href="<%= @list_topics[1].show_url %>" target="_blank">[更多详细]</a></p>
 					</div>
 					<ul class="box_item_list clearfix" style="border-bottom:1px dashed #EBEBEB;">
 						<% 2.upto 9 do |i| %>
 						<li>
-							<a href="<%= @s1_topics[i].show_url %>" title="<%= @s1_topics[i].title %>"><%= @s1_topics[i].title %></a>
+							<a href="<%= @list_topics[i].show_url %>" title="<%= @list_topics[i].title %>" target="_blank"><%= @list_topics[i].title %></a>
 						</li>
 						<% end %>
 					</ul>
 					<ul class="box_item_list clearfix">
 						<% 10.upto 17 do |i| %>
 						<li>
-							<a href="<%= @s1_topics[i].show_url %>" title="<%= @s1_topics[i].title %>"><%= @s1_topics[i].title %></a>
+							<a href="<%= @list_topics[i].show_url %>" title="<%= @list_topics[i].title %>" target="_blank"><%= @list_topics[i].title %></a>
 						</li>
 						<% end %>
 					</ul>

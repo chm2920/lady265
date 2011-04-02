@@ -20,8 +20,8 @@
 
 .new_topics{float:right;display:inline;width:320px;}
 	.new_topics_title{margin-top:10px;padding-left:10px;padding-bottom:6px;height:20px;line-height:20px;font-size:14px;font-weight:bold;background:url(/images/hatch.gif) repeat-x left bottom;}
-	.new_topics_list{margin-top:6px;}
-		.new_topics_list li{padding:0 6px 0 36px;background:url(/images/arr_path.gif) no-repeat 10px center;height:28px;line-height:28px;width:288px;overflow:hidden;white-space:nowrap;border-bottom:1px solid #EBEBEB;}
+	.new_topics_list{margin-top:6px;padding-right:6px;}
+		.new_topics_list li{padding:0 0px 0 36px;background:url(/images/arr_path.gif) no-repeat 10px center;height:28px;line-height:28px;width:288px;overflow:hidden;white-space:nowrap;border-bottom:1px solid #EBEBEB;}
 		.new_topics_list li a{font-size:14px;}
 
 .product_list{}

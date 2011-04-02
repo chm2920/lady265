@@ -25,6 +25,7 @@ Lady256::Application.routes.draw do
     get "posts/import"
     post "posts/import"
     get "posts/get_article"
+    get "posts/set_cover"
     resources :posts
     get "run_logs/index"
     post "run_logs/index"

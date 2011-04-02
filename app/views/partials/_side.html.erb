@@ -1,4 +1,7 @@
 
+		<% 5.upto 7 do |c_id| %>
+		<% @category = Category.find(c_id) %>
+		<% @list_topics = Topic.index_news_list(c_id, 12) %>
 		<div class="box">
 			<div class="box_title">
 				<span>
@@ -8,10 +11,10 @@
 				<h4><a href="#">配饰</a></h4>
 			</div>
 			<ul class="product_list clearfix">
-				<% 2.times do %>
+				<% 0.upto 1 do |i| %>
 				<li>
-					<p class="product_img"><a href="#"><img src="/images/201103251802430.jpg" /></a></p>
-					<p class="product_name"><a href="#">盘点春夏腰带流行趋势</a></p>
+					<p class="product_img"><a href="<%= @list_topics[i].show_url %>" title="<%= @list_topics[i].title %>" target="_blank"><img src="<%= @list_topics[i].cover_file_name %>" alt="<%= @list_topics[i].title %>" /></a></p>
+					<p class="product_name"><a href="<%= @list_topics[i].show_url %>" title="<%= @list_topics[i].title %>" target="_blank"><%= @list_topics[i].title %></a></p>
 				</li>
 				<% end %>
 			</ul>
@@ -19,58 +22,9 @@
 				<% 6.times do %><a href="#">丝袜</a><% end %>
 			</div>
 			<ul class="box_r_item_list">
-				<% 10.times do %>
-				<li><a href="#">盘点春夏腰带流行趋势</a></li>
+				<% 2.upto 11 do |i| %>
+				<li><a href="<%= @list_topics[i].show_url %>" title="<%= @list_topics[i].title %>" target="_blank"><%= @list_topics[i].title %></a></li>
 				<% end %>
 			</ul>
 		</div>
-		<div class="box">
-			<div class="box_title">
-				<span>
-					<a href="#">丝袜</a>|<a href="#">项链</a>|<a href="#">首饰</a>
-					<a href="#" class="more">&gt;&gt;更多</a>
-				</span>
-				<h4><a href="#">包包</a></h4>
-			</div>
-			<ul class="product_list clearfix">
-				<% 2.times do %>
-				<li>
-					<p class="product_img"><a href="#"><img src="/images/201103251802430.jpg" /></a></p>
-					<p class="product_name"><a href="#">盘点春夏腰带流行趋势</a></p>
-				</li>
-				<% end %>
-			</ul>
-			<div class="product_types">
-				<% 6.times do %><a href="#">丝袜</a><% end %>
-			</div>
-			<ul class="box_r_item_list">
-				<% 10.times do %>
-				<li><a href="#">盘点春夏腰带流行趋势</a></li>
-				<% end %>
-			</ul>
-		</div>
-		<div class="box">
-			<div class="box_title">
-				<span>
-					<a href="#">丝袜</a>|<a href="#">项链</a>|<a href="#">首饰</a>
-					<a href="#" class="more">&gt;&gt;更多</a>
-				</span>
-				<h4><a href="#">鞋帽</a></h4>
-			</div>
-			<ul class="product_list clearfix">
-				<% 2.times do %>
-				<li>
-					<p class="product_img"><a href="#"><img src="/images/201103251802430.jpg" /></a></p>
-					<p class="product_name"><a href="#">盘点春夏腰带流行趋势</a></p>
-				</li>
-				<% end %>
-			</ul>
-			<div class="product_types">
-				<% 6.times do %><a href="#">丝袜</a><% end %>
-			</div>
-			<ul class="box_r_item_list">
-				<% 10.times do %>
-				<li><a href="#">盘点春夏腰带流行趋势</a></li>
-				<% end %>
-			</ul>
-		</div>
+		<% end %>

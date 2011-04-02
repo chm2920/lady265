@@ -28,7 +28,7 @@ class Admin::PostsController < Admin::AdminBackEndController
   end
   
   def get_article
-    2.upto 7 do |i|
+    1.upto 7 do |i|
       @posts = Post.find(:all, :conditions => "category_id = #{i} and is_get = 0", :order => "created_at desc", :limit => 20)
       for post in @posts
         get_content(post)
@@ -156,6 +156,7 @@ class Admin::PostsController < Admin::AdminBackEndController
         
         cs = content.scan(/src="(.*?)"/)
         if cs.length>0
+          tmp_arr = []
           cs.each do |h|
             image_file = h[0].to_s
             puts image_file
@@ -163,13 +164,12 @@ class Admin::PostsController < Admin::AdminBackEndController
             path = File.join(full_directory, name)
             File.open(path, "wb") { |f| f.write(open(image_file).read) }
             puts directory + name
+            tmp_arr << directory + name
             content = content.gsub(image_file, directory + name)
           end
           
           topic.content = content
-          puts "---------------"
-          puts cs[0][0].to_s
-          topic.cover_file_name = cs[0][0].to_s
+          topic.cover_file_name = tmp_arr[0].to_s
         end
         topic.save!
         
@@ -181,6 +181,19 @@ class Admin::PostsController < Admin::AdminBackEndController
         record_error(e)
       end
     end
+  end
+  
+  def set_cover
+    for topic in Topic.all
+      imgs = topic.content.scan(/src="(.*?)"/)
+      if imgs.length > 0
+        topic.cover_file_name = imgs[0][0].to_s
+      else
+        topic.cover_file_name = ""
+      end
+      topic.save
+    end
+    render :text => "ok"
   end
   
 end

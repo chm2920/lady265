@@ -6,24 +6,24 @@
 			</div>
 			<div class="box_info clearfix">
 				<div class="box_info_imgs">
-					<% 4.times do %>
+					<% for topic in @pic_topics %>
 					<div class="box_info_img_item">
-						<img src="/images/201103241453390.jpg" alt="" />
-						<div class="box_re_pic_item_txt"><a href="#">搞笑广告百事可乐功夫和尚恶搞啊</a></div>
+						<a href="<%= topic.show_url %>" title="<%= topic.title %>" target="_blank"><img src="<%= topic.cover_file_name %>" alt="<%= topic.title %>" /></a>
+						<div class="box_info_img_item_txt"><a href="<%= topic.show_url %>" title="<%= topic.title %>" target="_blank"><%= topic.title %></a></div>
 					</div>
 					<% end %>
 				</div>
 				<ul class="box_info_list">
-					<% 60.times do %>
+					<% for topic in @topics %>
 					<li>
-						<span>[2011-03-30]</span>
-						<a href="/<%= @category.alias %>/<%= @category.id %>.html" title="搞笑广告百事可乐功夫和尚恶搞啊">搞笑广告百事可乐功夫和尚恶搞啊</a>
+						<span>[<%= topic.created_at.strftime("%Y-%m-%d") %>]</span>
+						<a href="<%= topic.show_url %>" title="<%= topic.title %>" target="_blank"><%= topic.title %></a>
 					</li>
 					<% end %>
 				</ul>
 			</div>
 			<div class="box_pagination">
-				<a href="#" class="current">1</a><a href="#">2</a>
+				<%= will_paginate @topics %>
 			</div>
 		</div>
 	</div>

@@ -18,5 +18,9 @@ class Topic < ActiveRecord::Base
   def show_url
     "/#{self.category.alias}/#{self.created_at.strftime("%Y%m%d")}_#{self.id}.html"
   end
+  
+  def self.index_news_list(category_id, length)
+    self.find(:all, :conditions => "category_id = #{category_id}", :order => "created_at desc", :limit => length)
+  end
     
 end
