@@ -13,6 +13,7 @@ class StartController < ApplicationController
     @category = Category.find_by_alias(params[:id])
     @pic_topics = Topic.find(:all, :conditions => "category_id = #{@category.id} and cover_file_name <> ''", :order => "created_at desc", :limit => 5)
     @topics = Topic.paginate :page => params[:page], :per_page => 60, :conditions => "category_id = #{@category.id}", :order => "created_at desc"
+    @page_title = @category.name
   end
   
   def topic
