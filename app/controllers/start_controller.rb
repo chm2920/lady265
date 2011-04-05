@@ -22,6 +22,8 @@ class StartController < ApplicationController
     @cur = params[:c]
     @category = Category.find_by_alias(params[:c])
     @topic = Topic.find(params[:id])
+    @topic.hits = @topic.hits + 1
+    @topic.save
     @contents = @topic.content.split("<hr><hr>")
     @page_count = @contents.length
     if params[:page].nil? || params[:page].to_i > @contents.length
