@@ -1,30 +1,20 @@
-
-		<% 5.upto 7 do |c_id| %>
-		<% @category = Category.find(c_id) %>
-		<% @list_topics = Topic.index_news_list(c_id, 12) %>
+		
+		<%= render "/partials/side_a" %>
 		<div class="box">
 			<div class="box_title">
-				<span>
-					<a href="#">丝袜</a>|<a href="#">项链</a>|<a href="#">首饰</a>
-					<a href="#" class="more">&gt;&gt;更多</a>
-				</span>
-				<h4><a href="/<%= @category.alias %>"><%= @category.name %></a></h4>
+				<h4><a>热门点击</a></h4>
 			</div>
-			<ul class="product_list clearfix">
-				<% 0.upto 1 do |i| %>
+			<ul class="re_list clearfix">
+				<% for topic in @side_pic_topics %>
 				<li>
-					<p class="product_img"><a href="<%= @list_topics[i].show_url %>" title="<%= @list_topics[i].title %>" target="_blank"><img src="<%= @list_topics[i].cover_file_name %>" alt="<%= @list_topics[i].title %>" /></a></p>
-					<p class="product_name"><a href="<%= @list_topics[i].show_url %>" title="<%= @list_topics[i].title %>" target="_blank"><%= @list_topics[i].title %></a></p>
+					<p class="re_img"><a href="<%= topic.show_url %>" title="<%= topic.title %>" target="_blank"><img src="<%= topic.cover_file_name %>" alt="<%= topic.title %>" /></a></p>
+					<p class="re_name"><a href="<%= topic.show_url %>" title="<%= topic.title %>" target="_blank"><%= topic.title %></a></p>
 				</li>
 				<% end %>
 			</ul>
-			<div class="product_types">
-				<% 6.times do %><a href="#">丝袜</a><% end %>
-			</div>
-			<ul class="box_r_item_list">
-				<% 2.upto 11 do |i| %>
-				<li><a href="<%= @list_topics[i].show_url %>" title="<%= @list_topics[i].title %>" target="_blank"><%= @list_topics[i].title %></a></li>
+			<ul class="box_r_common_list">
+				<% for topic in @side_topics %>
+				<li><a href="<%= topic.show_url %>" title="<%= topic.title %>" target="_blank"><%= topic.title %></a></li>
 				<% end %>
 			</ul>
 		</div>
-		<% end %>

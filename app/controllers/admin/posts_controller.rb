@@ -196,4 +196,78 @@ class Admin::PostsController < Admin::AdminBackEndController
     render :text => "ok"
   end
   
+  def get_post
+    @topics = Topic.find(:all, :conditions => "content = ''")
+    for topic in @topics
+      @post = Post.find_by_topic_id(topic.id)
+      get_photo_content(@post)
+    end
+    render :text => "ok"
+  end
+  
+  def get_photo_content(post)
+    ActiveRecord::Base.transaction do
+      begin
+        require 'open-uri'
+        require 'iconv'
+        topic = post.topic
+        puts topic.id.to_s + "======================"
+        url = post.url
+        gets = open(url).read
+        imgs = Array.new()        
+        page = 2
+        gets.scan(/max_page = (.*?);/) do |a|
+          puts a[0].to_s
+          page = a[0].to_s
+        end
+    
+        gets.scan(/<img src=\"(.*?)\" lowsrc=/) do |b|
+          puts b[0].to_s
+          imgs << "<img src=\"" + b[0].to_s + "\">"
+        end
+        
+        2.upto page.to_i do |i|
+          sub_url = url.gsub(".html", "_#{i-1}.html")
+          sub_get = open(sub_url).read
+          sub_get.scan(/<img src=\"(.*?)\" lowsrc=/) do |b|
+            puts b[0].to_s
+            imgs << "<img src=\"" + b[0].to_s + "\">"
+          end
+        end
+        
+        content = imgs.join("<hr><hr>")
+      
+        full_directory = "#{RAILS_ROOT}/public/imgfiles/#{topic.id}/"
+        directory = "/imgfiles/#{topic.id}/"
+        #Dir.mkdir(full_directory)
+        
+        cs = content.scan(/src="(.*?)"/)
+        if cs.length>0
+          tmp_arr = []
+          cs.each do |h|
+            image_file = h[0].to_s
+            puts image_file
+            name = Time.now.strftime("%Y%m%d%H%M%S") + rand(100).to_s + "." + image_file.split(".").last
+            path = File.join(full_directory, name)
+            File.open(path, "wb") { |f| f.write(open(image_file).read) }
+            puts directory + name
+            tmp_arr << directory + name
+            content = content.gsub(image_file, directory + name)
+          end
+          
+          topic.content = content
+          topic.cover_file_name = tmp_arr[0].to_s
+        end
+        topic.save!
+        
+        post.topic_id = topic.id
+        post.is_get = 1
+        post.save!
+      rescue Exception => e
+        ActiveRecord::Rollback
+        record_error(e)
+      end
+    end
+  end
+  
 end

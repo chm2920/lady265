@@ -1,0 +1,84 @@
+<%= javascript_include_tag 'admin/select' %>
+<table align="CENTER" width="100%" border="0" cellspacing="0" cellpadding="0" class="main">
+	<tr>
+		<td align="left" height="30" class="data_td_bg">
+			&nbsp;&nbsp;&nbsp;管理导航：&nbsp;&nbsp;<a href="/admin/topics/index">文章管理</a>
+			&nbsp;|&nbsp; <a href="/admin/topics/new">文章添加</a>
+			&nbsp;|&nbsp; <a href="/admin/topics/null">内容为空</a>
+		</td>
+	</tr>
+</table>
+<table align="CENTER" width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td align="CENTER" valign="MIDDLE">&nbsp;</td>
+	</tr>
+</table>
+			
+<% form_tag({:action => "index"}, {:name => "vbform", :id => "vbform"}) do %>		  
+<table align="CENTER" width="100%" border="0" cellspacing="0" cellpadding="0" class="main">
+	<tr>
+		<td align="CENTER" valign="MIDDLE">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr class="data_tr">
+					<td class="data_td_label" width="5%" align="CENTER">ID</td>
+					<td class="data_td_label" width="10%" align="CENTER">分类</td>
+					<td class="data_td_label" align="CENTER">名称</td>
+					<td class="data_td_label" width="40%" align="CENTER">Url</td>
+					<td class="data_td_label" width="20%" align="CENTER">管理</td>
+				</tr>
+				<%
+					if @topics.length>0
+				%>
+				<%
+						@topics.each do |topic|
+				%>
+				<tr>
+					<td colspan="5" class="border_bottom"></td>
+				</tr>
+				<tr class="data_tr" onmouseover="this.style.backgroundColor='#F4E088';this.style.borderColor='#003c9c';this.style.cursor='default';" onmouseout="this.style.backgroundColor='';this.style.borderColor='';">
+					<td align="CENTER"><%= check_box_tag 'topic_ids[]', topic.id %></td>
+					<td align="CENTER"><%= topic.category.name %></td>
+					<td align="CENTER"><a href="/<%= topic.category.alias %>/<%= topic.created_at.strftime("%Y%m%d") %>_<%= topic.id %>.html" target="_blank"><%= topic.title %></a></td>
+					<td align="CENTER"><a href="<%= topic.post.url %>" target="_blank"><%= topic.post.url %></a></td>
+					<td align="CENTER">
+						<a href="/admin/posts/get_post?id=<%= topic.id %>">重新采集</a>&nbsp;|&nbsp;
+						<a href="/admin/topics/<%= topic.id %>/edit">修改</a>&nbsp;|&nbsp;<%= link_to "删除", {:action => "destroy", :id => topic}, :confirm => "确定删除？", :method => "delete" %>
+					</td>
+				</tr>
+				<%
+						end
+				%>
+				<tr>
+					<td class="border_bottom" colspan="5" align="CENTER"></td>
+				</tr>
+				<tr class="data_tr">
+					<td colspan="5" align="CENTER" height="30">
+						<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="page">
+							<tr>
+								<td width="45%">&nbsp;
+									<input type="button" name="selectAll" value="全选" onClick="CheckAll(vbform,'topic_ids[]');" class="a_button">
+									&nbsp;<input type="button" name="selectOther" value="反选" onClick="CheckOthers(vbform,'topic_ids[]');" class="a_button">
+									&nbsp;<input type="submit" name="delete_all" value="全部删除" onClick="return checkForm(vbform);" class="b_button">
+								</td>
+								<td align="center"><%= will_paginate @topics %></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<%
+					else
+				%>
+				<tr>
+					<td class="border_bottom" colspan="5" align="CENTER"></td>
+				</tr>
+				<tr class="data_tr">
+					<td colspan="5" align="left" height="30">&nbsp;还没有内容。</td>
+				</tr>
+				<%
+					end
+				%>
+			</table>
+		</td>
+	</tr>
+</table>
+<% end %>

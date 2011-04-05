@@ -41,4 +41,11 @@ class Admin::TopicsController < Admin::AdminBackEndController
     redirect_to :action => "index"
   end
   
+  def null
+    if !params[:topic_ids].nil?
+      Topic.destroy_all(["id in (?)", params[:topic_ids]])
+    end
+    @topics = Topic.paginate :page => params[:page], :per_page => 15, :conditions => "content = ''", :order => "created_at desc"
+  end
+  
 end

@@ -13,6 +13,8 @@ class StartController < ApplicationController
     @category = Category.find_by_alias(params[:id])
     @pic_topics = Topic.find(:all, :conditions => "category_id = #{@category.id} and cover_file_name <> ''", :order => "created_at desc", :limit => 5)
     @topics = Topic.paginate :page => params[:page], :per_page => 60, :conditions => "category_id = #{@category.id}", :order => "created_at desc"
+    @side_pic_topics = Topic.find(:all, :conditions => "category_id = #{@category.id} and cover_file_name <> ''", :order => "hits desc, created_at desc", :limit => 2)
+    @side_topics = Topic.find(:all, :conditions => "category_id = #{@category.id}", :order => "hits desc, created_at desc", :limit => 10)
     @page_title = @category.name
   end
   
@@ -29,6 +31,10 @@ class StartController < ApplicationController
       @page = params[:page].to_i
       @content = @contents[@page-1]
     end
+    @re_pic_topics = Topic.find(:all, :conditions => "cover_file_name <> ''", :order => "hits desc, created_at desc", :limit => 4)
+    @re_topics = Topic.find(:all, :order => "hits desc, created_at desc", :limit => 20)
+    @side_pic_topics = Topic.find(:all, :conditions => "category_id = #{@category.id} and cover_file_name <> ''", :order => "hits desc, created_at desc", :limit => 2)
+    @side_topics = Topic.find(:all, :conditions => "category_id = #{@category.id}", :order => "hits desc, created_at desc", :limit => 10)
     @page_title = @topic.title
   end
   

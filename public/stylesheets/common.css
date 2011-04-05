@@ -19,9 +19,9 @@ input, option, select, textarea, button {font-size: 12px;}
 #wapper{width:100%;text-align:center;margin:0 auto;background:#FFF;}
 #Container{margin:0 auto;width:960px;text-align:left;background:#FFF;}
 
-#Header{height:88px;}
-	.logo{padding-top:10px;padding-left:20px;}
-	.search{}
+#Header{height:90px;}
+	.logo{float:left;display:inline;padding-top:10px;padding-left:20px;}
+	.search{float:right;display:inline;width:728px;height:90px;}
 	
 #Nav{margin:0 auto;background:#e17ca4;height:36px;}
 	.NavList{float:left;display:inline;}
@@ -39,13 +39,13 @@ input, option, select, textarea, button {font-size: 12px;}
 #Footer{margin:0 auto;margin-top:10px;text-align:left;border-top:1px solid #e17ca4;}
 	#Foot{padding:26px 0 18px 0;text-align:center;font-family:Arial, Helvetica, sans-serif;color:#404040;}
 	
-#Main{float:left;display:inline;width:628px;}
-#Side{float:right;display:inline;width:320px;}
+#Main{float:left;display:inline;width:648px;}
+#Side{float:right;display:inline;width:300px;}
 .box{border:1px solid #e17ca4;margin-top:10px;}
 	.box_title{padding:8px 18px;background:#fff4f8;border-bottom:1px solid #EBEBEB;}
 	.box_title h3{font-size:18px;font-weight:bold;color:#E74C97;}
 	.box_title h3 a{color:#E74C97;}
-	.box_title h4{font-size:12px;font-weight:bold;}
+	.box_title h4{font-size:12px;font-weight:bold;color:#E74C97;}
 	.box_title h4 a{color:#E74C97;}
 	.box_title h5{font-size:12px;font-weight:normal;color:#666;background:url(/images/arr_path.gif) no-repeat left center;padding-left:16px;}
 	.box_title h5 a{color:#333;}
@@ -68,8 +68,8 @@ input, option, select, textarea, button {font-size: 12px;}
 				.box_item_list li{float:left;display:inline;width:186px;padding-left:6px;background:url(/images/arr.gif) no-repeat left center;line-height:23px;height:23px;margin-right:10px;overflow:hidden;white-space:nowrap;}
 				.box_item_list li a{font-size:12px;}
 	.box_info{padding:20px 20px 2px 20px;}
-		.box_info_imgs{float:left;display:inline;width:160px;padding:2px;}
-			.box_info_img_item{background:#b0b4d1;margin-bottom:20px;}
+		.box_info_imgs{float:left;display:inline;width:162px;padding:2px;}
+			.box_info_img_item{background:#b0b4d1;margin-bottom:20px;text-align:center;}
 			.box_info_img_item img{width:160px;}
 			.box_info_img_item_txt{height:23px;line-height:23px;width:156px;padding:0 6px;overflow:hidden;white-space:nowrap;text-align:center; text-overflow:ellipsis;}
 			.box_info_img_item_txt a{color:#FFF;}
