@@ -11,6 +11,11 @@ Lady256::Application.routes.draw do
   get "account/desktop"
   match "logout" => "account#logout"
   
+  get "tao/lady"
+  get "tao/beauty"
+  get "tao/jewelry"
+  get "tao/taiwan"
+  
   namespace :admin do
     get "categories/index"
     post "categories/index"

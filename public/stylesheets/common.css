@@ -19,6 +19,12 @@ input, option, select, textarea, button {font-size: 12px;}
 #wapper{width:100%;text-align:center;margin:0 auto;background:#FFF;}
 #Container{margin:0 auto;width:960px;text-align:left;background:#FFF;}
 
+#Top{height:30px;line-height:30px;background:#fff4f8;color:#E74C97;}
+	#Top a{color:#E74C97;}
+	.top_l{float:left;display:inline;margin-left:10px;}
+		.top_l a{font-weight:bold;}
+	.top_r{float:right;display:inline;margin-right:10px;}
+		.top_r a{font-weight:bold;margin-right:10px;}
 #Header{height:90px;}
 	.logo{float:left;display:inline;padding-top:10px;padding-left:20px;}
 	.search{float:right;display:inline;width:728px;height:90px;}
@@ -36,6 +42,10 @@ input, option, select, textarea, button {font-size: 12px;}
 
 #PageBody{height:auto !important;margin:auto;min-height:200px;text-align:left;padding-top:10px;}
 
+#FriendLinks{margin:0 auto;margin-top:10px;border:1px solid #e17ca4;text-align:left;}
+	.fl_title{float:left;display:inline;padding:0px 18px;height:30px;line-height:30px;background:#fff4f8;font-size:12px;font-weight:bold;color:#E74C97;}
+	.fl_list{float:left;display:inline;padding:0px 10px;}
+		.fl_list li{float:left;display:inline;margin-left:10px;background:url(/images/arr_path.gif) no-repeat left center;padding-left:16px;line-height:30px;}
 #Footer{margin:0 auto;margin-top:10px;text-align:left;border-top:1px solid #e17ca4;}
 	#Foot{padding:26px 0 18px 0;text-align:center;font-family:Arial, Helvetica, sans-serif;color:#404040;}
 	

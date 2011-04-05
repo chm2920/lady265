@@ -1,6 +1,7 @@
+# coding: utf-8 
 class StartController < ApplicationController
   
-  before_filter :find_categories, :get_side_topics
+  before_filter :find_categories
   
   def index
     @cur = "index"
@@ -44,12 +45,6 @@ private
 
   def find_categories
     @categories = Category.all
-  end
-  
-  def get_side_topics    
-    @s5_topics = Topic.find(:all, :conditions => "category_id = 5", :order => "created_at desc", :limit => 10)
-    @s6_topics = Topic.find(:all, :conditions => "category_id = 6", :order => "created_at desc", :limit => 10)
-    @s7_topics = Topic.find(:all, :conditions => "category_id = 7", :order => "created_at desc", :limit => 10)
   end
   
 end
