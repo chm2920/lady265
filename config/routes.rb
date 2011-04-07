@@ -9,6 +9,7 @@ Lady256::Application.routes.draw do
   match "admin" => "account#login"
   get "account/main"
   get "account/desktop"
+  match "login_rst" => "account#login_rst"
   match "logout" => "account#logout"
   
   get "tao/lady"
@@ -38,6 +39,9 @@ Lady256::Application.routes.draw do
     get "run_logs/index"
     post "run_logs/index"
     resources :run_logs
+    get "admins/index"
+    post "admins/index"
+    resources :admins
   end
 
   get 'kindeditor/images_list'

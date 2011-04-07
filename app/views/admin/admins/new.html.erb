@@ -1,0 +1,41 @@
+<table align="CENTER" width="100%" border="0" cellspacing="0" cellpadding="0" class="main">
+	<tr>
+		<td align="left" height="30" class="data_td_bg">
+			&nbsp;&nbsp;&nbsp;管理导航：&nbsp;&nbsp;<a href="/admin/admins/index">管理员管理</a>
+			&nbsp;|&nbsp; <a href="/admin/admins/new">新增</a>
+		</td>
+	</tr>
+</table>
+<table align="CENTER" width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td align="CENTER" valign="MIDDLE">&nbsp;</td>
+	</tr>
+</table>
+<%= form_for([:admin, @admin]) do |f| %>
+<table width="100%" border="0" cellspacing="1" cellpadding="2" bgcolor="#CCCCCC">
+	<tr>
+		<td class="top-nav" bgcolor="#2E9AC8" height="28" colspan="2">&nbsp;&nbsp;&nbsp;<img src="/images/admin/arr_right.gif">&nbsp;&nbsp;
+		<strong>新增</strong></td>
+	</tr>
+	<tr>
+		<td class="data_td_label" width="15%" align="RIGHT">名称：</td>
+		<td class="data_td_text">&nbsp;<input type="text" value="" name="admin[adminname]" id="admin_adminname" class="input_text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)">
+		</td>
+	</tr>
+	<tr>
+		<td class="data_td_label" width="15%" align="RIGHT">密码：</td>
+		<td class="data_td_text">&nbsp;<input type="text" value="" name="admin[password]" id="admin_password" class="input_text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)">
+		</td>
+	</tr>
+	<tr>
+		<td class="data_td_label" width="15%" align="RIGHT">确认密码：</td>
+		<td class="data_td_text">&nbsp;<input type="text" value="" name="admin[password_confirm]" id="admin_password_confirm" class="input_text" onFocus="fEvent('focus',this)" onBlur="fEvent('blur',this)" onMouseOver="fEvent('mouseover',this)" onMouseOut="fEvent('mouseout',this)">
+		</td>
+	</tr>
+	<tr>
+		<td bgcolor="#FFFFFF" colspan="2" align="CENTER" height="30">
+			<input type="submit" name="submit" value="提交" class="btn_ok">
+		</td>
+	</tr>
+</table>
+<% end %>
