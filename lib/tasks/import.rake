@@ -3,7 +3,7 @@
 desc "import xml"
 task(:import_xml => :environment) do
   name = "topics.xml"
-  directory = "#{RAILS_ROOT}/"
+  directory = "#{RAILS_ROOT}/public/xml/"
   path = File.join(directory, name)
   
   xml_data = File.open(path, "r:utf-8")
@@ -14,7 +14,7 @@ task(:import_xml => :environment) do
   hsh = Hash.from_xml(result)
   for topic in hsh["topics"]["topic"]
     t = Topic.new
-    t.category_id = topic["category_id"]
+    t.category_id = topic["category_id"].to_i
     t.title = topic["title"]
     t.content = topic["content"]
     t.summary = topic["summary"]
@@ -28,7 +28,7 @@ task(:import_xml => :environment) do
   
   
   name = "posts.xml"
-  directory = "#{RAILS_ROOT}/"
+  directory = "#{RAILS_ROOT}/public/xml/"
   path = File.join(directory, name)
   
   xml_data = File.open(path, "r:utf-8")
@@ -39,11 +39,12 @@ task(:import_xml => :environment) do
   hsh = Hash.from_xml(result)
   for post in hsh["posts"]["post"]
     p = Post.new
-    p.category_id = post["category_id"]
-    p.topic_id = post["topic_id"]
+    p.category_id = post["category_id"].to_i
+    p.topic_id = post["topic_id"].to_i
     p.title = post["title"]
     p.url = post["url"]
     p.created_at = post["created_at"]
+    p.is_get = 1
     p.save
   end
 end

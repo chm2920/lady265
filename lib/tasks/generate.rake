@@ -2,8 +2,8 @@
 
 desc "generate xml"
 task(:generate_xml => :environment) do
-  topics = Topic.find(:all, :conditions => "created_at > '2011-04-01'", :order => "id desc")
-  f = File.new("topics.xml","w:UTF-8")
+  topics = Topic.find(:all, :conditions => "created_at >= '2011-04-01'", :order => "id desc")
+  f = File.new("public/xml/topics.xml","w:UTF-8")
 # f.puts "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
   f.puts "<topics>"
   for topic in topics
@@ -21,13 +21,13 @@ task(:generate_xml => :environment) do
   f.puts "</topics>"
   f.close
   
-  posts = Post.find(:all, :conditions => "created_at > '2011-04-01'", :order => "id desc")
-  f = File.new("posts.xml","w:UTF-8")
+  posts = Post.find(:all, :conditions => "created_at >= '2011-04-01'", :order => "id desc")
+  f = File.new("public/xml/posts.xml","w:UTF-8")
 # f.puts "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
   f.puts "<posts>"
   for post in posts
     f.puts "\t<post>"
-      f.puts "\t\t<category_id>" + topic["category_id"].to_s + "</category_id>"
+      f.puts "\t\t<category_id>" + post["category_id"].to_s + "</category_id>"
       f.puts "\t\t<topic_id>" + post["topic_id"].to_s + "</topic_id>"
       f.puts "\t\t<title>" + post["title"].to_s + "</title>"
       f.puts "\t\t<url>" + post["url"] + "</url>"
