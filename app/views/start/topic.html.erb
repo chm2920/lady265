@@ -16,7 +16,7 @@
 				</div>
 				<% end %>
 				<div class="topic_content">
-				<%= simple_format @content %>
+				<%= show_content @content %>
 				</div>
 				<div class="topic_pagination">
 					<%= topic_show_page(@topic, @page_count, @page) %>
