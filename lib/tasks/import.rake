@@ -25,4 +25,25 @@ task(:import_xml => :environment) do
     t.hits = 0
     t.save
   end
+  
+  
+  name = "posts.xml"
+  directory = "#{RAILS_ROOT}/"
+  path = File.join(directory, name)
+  
+  xml_data = File.open(path, "r:utf-8")
+  result = ""
+  xml_data.each_line do |line|
+    result += line
+  end
+  hsh = Hash.from_xml(result)
+  for post in hsh["posts"]["post"]
+    p = Post.new
+    p.category_id = post["category_id"]
+    p.topic_id = post["topic_id"]
+    p.title = post["title"]
+    p.url = post["url"]
+    p.created_at = post["created_at"]
+    p.save
+  end
 end

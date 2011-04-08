@@ -5,29 +5,33 @@ require 'iconv'
 
 desc "get_new_articles_from_web"
 task(:get_new => :environment) do  
-  def get_content(post)
-    topic = Topic.new
-    topic.category_id = post.category_id
-    topic.title = post.title
-    topic.created_at = post.created_at
-    topic.pub_from = "爱美网"
-    topic.editor = "hello_su"
-    topic.hits = 0
-    
+  def get_content(post)    
     url = post.url
     puts "========================"
     puts url    
     puts "========================"
-    content = get_summary_and_content(url)
-
-    topic.summary = content[0]
-    topic.content = content[1]
-    topic.save!
-    save_images(topic)
-    
-    post.topic_id = topic.id
-    post.is_get = 1
-    post.save!
+    begin
+      content = get_summary_and_content(url)
+    rescue
+      puts "url error"
+    else      
+      topic = Topic.new
+      topic.category_id = post.category_id
+      topic.title = post.title
+      topic.created_at = post.created_at
+      topic.pub_from = "爱美网"
+      topic.editor = "hello_su"
+      topic.hits = 0
+  
+      topic.summary = content[0]
+      topic.content = content[1]
+      topic.save!
+      save_images(topic)
+      
+      post.topic_id = topic.id
+      post.is_get = 1
+      post.save!
+    end
   end
   
   def save_images(topic)
@@ -156,50 +160,70 @@ task(:get_new => :environment) do
         post.save!
       rescue Exception => e
         ActiveRecord::Rollback
-        record_error(e)
+        #record_error(e)
       end
     end
   end
   
-  BEGINDATE = "2011-04-01" 
-
-  urls = []
-  urls << "http://clothing.lady8844.com/clothing/star/index.html"
-  #urls << "http://clothing.lady8844.com/clothing/fashion/index.html"
-  #urls << "http://clothing.lady8844.com/clothing/school/index.html"
-  #urls << "http://clothing.lady8844.com/streetsnap/index.html"
-  #urls << "http://clothing.lady8844.com/clothing/accessories/index.html"
-  #urls << "http://clothing.lady8844.com/clothing/bags/index.html"
-  #urls << "http://clothing.lady8844.com/clothing/shoes/index.html"
-
-  0.upto urls.length-1 do |i|
-    url = urls[i]
-    puts url
+  def open_url(url, category_id)
     gets = open(url).read
     posts = []
-    j = 1    
-    gets.scan(/<a target="_blank" href="(.*?).html" title="(.*?)">(.*?)<\/a><span class="date">(.*?)<\/span>/) do |a, b, c, d|
-      post = Hash.new
-      sub_url = a.to_s + ".html"
-      post["url"] = sub_url
-      post["title"] = b.to_s.force_encoding('UTF-8').gsub('&', "_")
-      post["date"] = d.to_s.force_encoding('UTF-8').gsub('[', "").gsub(']', "")
-      if post["date"]>=BEGINDATE
-        puts j.to_s + "_" + sub_url
-        j += 1
-        posts << post
+    j = 1
+    if category_id==4
+      gets.scan(/<a href="(.*?).html" target="_blank">(.*?)<\/a><\/td>(.*?)\n(.*?)<td widht="20%">(.*?)<\/td>/) do |a, b, c, d, e|
+        post = Hash.new
+        sub_url = a.to_s + ".html"
+        post["url"] = sub_url
+        post["title"] = b.to_s.force_encoding('UTF-8').gsub('&', "_")
+        post["date"] = e.to_s.force_encoding('UTF-8')
+        if post["date"]>=BEGINDATE
+          puts j.to_s + "_" + sub_url
+          j += 1
+          posts << post
+        end
       end
-    end  
+    else
+      gets.scan(/<a target="_blank" href="(.*?).html" title="(.*?)">(.*?)<\/a><span class="date">(.*?)<\/span>/) do |a, b, c, d|
+        post = Hash.new
+        sub_url = a.to_s + ".html"
+        post["url"] = sub_url
+        post["title"] = b.to_s.force_encoding('UTF-8').gsub('&', "_")
+        post["date"] = d.to_s.force_encoding('UTF-8').gsub('[', "").gsub(']', "")
+        if post["date"]>=BEGINDATE
+          puts j.to_s + "_" + sub_url
+          j += 1
+          posts << post
+        end
+      end
+    end 
     posts.reverse!
     for post in posts
       p = Post.new
-      p.category_id = i+1
+      p.category_id = category_id
       p.title = post["title"]
       p.url = post["url"]
       p.created_at = post["date"]
       p.save!
       get_content(p)
     end
+  end
+  
+  BEGINDATE = "2011-04-01" 
+
+  urls = []
+  #urls << "http://clothing.lady8844.com/clothing/star/index.html"
+  #urls << "http://clothing.lady8844.com/clothing/fashion/index.html"
+  urls << "http://clothing.lady8844.com/clothing/school/index.html"
+  urls << "http://clothing.lady8844.com/streetsnap/index.html"
+  urls << "http://clothing.lady8844.com/clothing/accessories/index.html"
+  urls << "http://clothing.lady8844.com/clothing/bags/index.html"
+  urls << "http://clothing.lady8844.com/clothing/shoes/index.html"
+
+  0.upto urls.length-1 do |i|
+    url = urls[i]   
+    puts url
+    puts "####################################"
+    open_url(url, i+3)
   end
   @topics = Topic.find(:all, :conditions => "content = ''")
   for topic in @topics
