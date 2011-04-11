@@ -38,8 +38,8 @@ module StartHelper
   end
   
   def show_content(content)
-    content = content.gsub(/<strong>爱美网猜你喜欢的文章<\/strong>(.*?)<\/p>(.*?)<\/p>/m, "")
-    content = content.gsub(/<strong>爱美网猜你喜欢的文章<\/strong>(.*?)<\/p>/m, "")
+    content = content.gsub(/<strong>爱美网<\/strong><strong>猜你喜欢的文章(.*?)<\/p>(.*?)<\/p>/m, "")
+    content = content.gsub(/<strong>爱美网<\/strong><strong>猜你喜欢的文章(.*?)<\/p>/m, "")
     simple_format content
   end
   

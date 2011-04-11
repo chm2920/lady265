@@ -1,317 +1,93 @@
 <posts>
 	<post>
-		<category_id>7</category_id>
-		<topic_id>5386</topic_id>
-		<title>坡跟鞋强势回归 2011春夏T台露头角</title>
-		<url>http://clothing.lady8844.com/clothing/shoes/2011-04-07/1302149753d558178.html</url>
-		<created_at>2011-04-07</created_at>
-	</post>
-	<post>
-		<category_id>7</category_id>
-		<topic_id>5385</topic_id>
-		<title>浪漫优雅 joy_peace塑造完美单鞋</title>
-		<url>http://clothing.lady8844.com/clothing/shoes/2011-04-06/1302081841d557943.html</url>
-		<created_at>2011-04-07</created_at>
-	</post>
-	<post>
-		<category_id>7</category_id>
-		<topic_id>5384</topic_id>
-		<title>大热松糕鞋 让你这个春夏自信十足</title>
-		<url>http://clothing.lady8844.com/clothing/shoes/2011-04-06/1302078635d557880.html</url>
-		<created_at>2011-04-07</created_at>
-	</post>
-	<post>
-		<category_id>7</category_id>
-		<topic_id>5383</topic_id>
-		<title>2011年春夏流行鞋款 舒适时尚两不误</title>
-		<url>http://clothing.lady8844.com/clothing/shoes/2011-04-06/1302071403d557749.html</url>
-		<created_at>2011-04-06</created_at>
-	</post>
-	<post>
-		<category_id>7</category_id>
-		<topic_id>5382</topic_id>
-		<title>缤纷色彩 锐步新款女波鞋一鞋两穿</title>
-		<url>http://clothing.lady8844.com/clothing/shoes/2011-04-06/1302063960d557689.html</url>
-		<created_at>2011-04-06</created_at>
-	</post>
-	<post>
-		<category_id>7</category_id>
-		<topic_id>5381</topic_id>
-		<title>舒适为首 阿迪达斯新款女鞋名列前位</title>
-		<url>http://clothing.lady8844.com/clothing/shoes/2011-04-06/1302056078d557599.html</url>
-		<created_at>2011-04-06</created_at>
-	</post>
-	<post>
-		<category_id>7</category_id>
-		<topic_id>5380</topic_id>
-		<title>Vans2011春季鞋款 创意营造惊喜</title>
-		<url>http://clothing.lady8844.com/clothing/shoes/2011-03-25/1301046362d553894.html</url>
-		<created_at>2011-04-04</created_at>
-	</post>
-	<post>
-		<category_id>7</category_id>
-		<topic_id>5379</topic_id>
-		<title>2011春夏潮流时尚帽子组图大赏</title>
-		<url>http://clothing.lady8844.com/accessories/photo/2011-04-01/1301640819d556637.html</url>
-		<created_at>2011-04-02</created_at>
-	</post>
-	<post>
-		<category_id>7</category_id>
-		<topic_id>5378</topic_id>
-		<title>adidas春夏新品 糖果色装点脚上风情</title>
-		<url>http://clothing.lady8844.com/accessories/photo/2011-04-01/1301634798d556572.html</url>
-		<created_at>2011-04-01</created_at>
-	</post>
-	<post>
-		<category_id>7</category_id>
-		<topic_id>5377</topic_id>
-		<title>踏青美翻了！加顶编织帽最迷人</title>
-		<url>http://clothing.lady8844.com/clothing/shoes/2011-04-01/1301629771d556522.html</url>
-		<created_at>2011-04-01</created_at>
-	</post>
-	<post>
-		<category_id>7</category_id>
-		<topic_id>5376</topic_id>
-		<title>韩版休闲帽轻松搭 郊游踏青正适宜</title>
-		<url>http://clothing.lady8844.com/clothing/shoes/2011-03-31/1301562055d556326.html</url>
-		<created_at>2011-04-01</created_at>
-	</post>
-	<post>
 		<category_id>6</category_id>
-		<topic_id>5375</topic_id>
-		<title>人手必备Celine囧包 引爆时尚热潮 </title>
-		<url>http://clothing.lady8844.com/clothing/bags/2011-04-07/1302164875d558365.html</url>
-		<created_at>2011-04-07</created_at>
-	</post>
-	<post>
-		<category_id>6</category_id>
-		<topic_id>5374</topic_id>
-		<title>白色情结 简约女包搭出春日出彩美态</title>
-		<url>http://clothing.lady8844.com/clothing/bags/2011-04-07/1302158583d558243.html</url>
-		<created_at>2011-04-07</created_at>
-	</post>
-	<post>
-		<category_id>6</category_id>
-		<topic_id>5373</topic_id>
-		<title>Roxy新款炫耀包包令你大开眼界</title>
-		<url>http://clothing.lady8844.com/clothing/bags/2011-04-06/1302056078d557601.html</url>
-		<created_at>2011-04-06</created_at>
-	</post>
-	<post>
-		<category_id>6</category_id>
-		<topic_id>5372</topic_id>
-		<title>人气韩国包包 打造帅哥美女新形象</title>
-		<url>http://www.lady8844.com/magazine/clothing/1301629888.html</url>
-		<created_at>2011-04-01</created_at>
-	</post>
-	<post>
-		<category_id>6</category_id>
-		<topic_id>5371</topic_id>
-		<title>明星追捧PS11 简约大方女包超百搭</title>
-		<url>http://clothing.lady8844.com/clothing/bags/2011-04-01/1301625480d556417.html</url>
-		<created_at>2011-04-01</created_at>
-	</post>
-	<post>
-		<category_id>5</category_id>
-		<topic_id>5370</topic_id>
-		<title>2011年丝巾妙用最时尚 春夏丝巾大赏</title>
-		<url>http://clothing.lady8844.com/clothing/accessories/2011-04-06/1302076267d557818.html</url>
-		<created_at>2011-04-06</created_at>
-	</post>
-	<post>
-		<category_id>5</category_id>
-		<topic_id>5369</topic_id>
-		<title>玩味眼镜潮搭 日本达人亲身示范</title>
-		<url>http://clothing.lady8844.com/clothing/accessories/2011-04-06/1302075879d557810.html</url>
-		<created_at>2011-04-06</created_at>
-	</post>
-	<post>
-		<category_id>5</category_id>
-		<topic_id>5368</topic_id>
-		<title>ZARA姐妹牌 2011春夏三月女士配饰</title>
-		<url>http://clothing.lady8844.com/clothing/accessories/2011-03-28/1301302962d554421.html</url>
-		<created_at>2011-04-04</created_at>
-	</post>
-	<post>
-		<category_id>5</category_id>
-		<topic_id>5367</topic_id>
-		<title>柔情丝巾魅力 郊游化身气质小仙女</title>
-		<url>http://clothing.lady8844.com/clothing/accessories/2011-04-02/1301726743d557173.html</url>
-		<created_at>2011-04-02</created_at>
-	</post>
-	<post>
-		<category_id>5</category_id>
-		<topic_id>5366</topic_id>
-		<title>LUV AJ 2011春夏复古配饰广告大片</title>
-		<url>http://clothing.lady8844.com/accessories/photo/2011-04-07/1302145730d558106.html</url>
-		<created_at>2011-04-07</created_at>
-	</post>
-	<post>
-		<category_id>5</category_id>
-		<topic_id>5365</topic_id>
-		<title>靓丽丝袜 打造极致女人味的魅惑</title>
-		<url>http://clothing.lady8844.com/accessories/photo/2011-04-07/1302138379d558022.html</url>
-		<created_at>2011-04-07</created_at>
-	</post>
-	<post>
-		<category_id>5</category_id>
-		<topic_id>5364</topic_id>
-		<title>潮牌Ksubi人气款时尚眼镜大推荐</title>
-		<url>http://clothing.lady8844.com/clothing/accessories/2011-04-01/1301629088d556495.html</url>
-		<created_at>2011-04-01</created_at>
-	</post>
-	<post>
-		<category_id>5</category_id>
-		<topic_id>5363</topic_id>
-		<title>流行必备：2011春夏时髦衣领搭配</title>
-		<url>http://clothing.lady8844.com/clothing/accessories/2011-04-01/1301626580d556436.html</url>
-		<created_at>2011-04-01</created_at>
-	</post>
-	<post>
-		<category_id>5</category_id>
-		<topic_id>5362</topic_id>
-		<title>维维安·韦斯特伍德2011春夏配饰</title>
-		<url>http://clothing.lady8844.com/clothing/accessories/2011-04-01/1301623537d556404.html</url>
-		<created_at>2011-04-01</created_at>
-	</post>
-	<post>
-		<category_id>4</category_id>
-		<topic_id>5361</topic_id>
-		<title>欧美女孩甜美风暴 街拍短裙美腿秀</title>
-		<url>http://clothing.lady8844.com/clothing/streetsnap/europe/2011-04-07/1302163685d558326.html</url>
-		<created_at>2011-04-07</created_at>
-	</post>
-	<post>
-		<category_id>4</category_id>
-		<topic_id>5360</topic_id>
-		<title>看时尚火人韩火火如何玩弄潮流风格</title>
-		<url>http://clothing.lady8844.com/clothing/streetsnap/star/2011-04-07/1302153102d558195.html</url>
-		<created_at>2011-04-07</created_at>
-	</post>
-	<post>
-		<category_id>3</category_id>
-		<topic_id>5359</topic_id>
-		<title>清新波西米亚风格 出游单品展现绚丽</title>
-		<url>http://clothing.lady8844.com/clothing/school/2011-04-07/1302150515d558185.html</url>
-		<created_at>2011-04-07</created_at>
-	</post>
-	<post>
-		<category_id>3</category_id>
-		<topic_id>5358</topic_id>
-		<title>套上一件西装外套 完胜的优雅装扮</title>
-		<url>http://clothing.lady8844.com/clothing/school/2011-04-06/1302071734d557759.html</url>
-		<created_at>2011-04-06</created_at>
-	</post>
-	<post>
-		<category_id>3</category_id>
-		<topic_id>5357</topic_id>
-		<title>优雅碎花热潮 搭出完美气质范儿</title>
-		<url>http://clothing.lady8844.com/clothing/school/2011-03-30/1301472769d555566.html</url>
-		<created_at>2011-04-04</created_at>
-	</post>
-	<post>
-		<category_id>2</category_id>
-		<topic_id>5356</topic_id>
-		<title>波尔卡圆点上身 复古潮流最时尚</title>
-		<url>http://clothing.lady8844.com/clothing/fashion/2011-04-01/1301631678d556548.html</url>
-		<created_at>2011-04-01</created_at>
-	</post>
-	<post>
-		<category_id>2</category_id>
 		<topic_id>5355</topic_id>
-		<title>PUMA黑标 体验全新街头运动风潮</title>
-		<url>http://clothing.lady8844.com/clothing/fashion/brand/2011-04-07/1302163051d558314.html</url>
-		<created_at>2011-04-07</created_at>
+		<title>地位的象征 阿迪达斯背包新风潮</title>
+		<url>http://clothing.lady8844.com/clothing/bags/2011-04-06/1302056078d557600.html</url>
+		<created_at>2011-04-10</created_at>
 	</post>
 	<post>
-		<category_id>2</category_id>
+		<category_id>6</category_id>
 		<topic_id>5354</topic_id>
-		<title>日系春夏美搭 做轻甜微熟小女人</title>
-		<url>http://clothing.lady8844.com/clothing/fashion/japan/2011-03-28/1301302816d554415.html</url>
-		<created_at>2011-04-06</created_at>
+		<title>盘点：2011春夏欧美女星最爱女包</title>
+		<url>http://clothing.lady8844.com/clothing/bags/2011-04-07/1302144491d558098.html</url>
+		<created_at>2011-04-09</created_at>
 	</post>
 	<post>
-		<category_id>2</category_id>
+		<category_id>5</category_id>
 		<topic_id>5353</topic_id>
-		<title>炎夏前的过渡 透气雪纺衫为首选</title>
-		<url>http://clothing.lady8844.com/clothing/fashion/japan/2011-03-29/1301382328d554852.html</url>
-		<created_at>2011-04-06</created_at>
+		<title>可爱复古戒指 时髦潮流达人新玩法</title>
+		<url>http://clothing.lady8844.com/clothing/accessories/2011-04-08/1302247589d558764.html</url>
+		<created_at>2011-04-08</created_at>
 	</post>
 	<post>
-		<category_id>2</category_id>
+		<category_id>4</category_id>
 		<topic_id>5352</topic_id>
-		<title>西装短裤转身变 OL解放秀美腿</title>
-		<url>http://clothing.lady8844.com/clothing/fashion/ol/2011-04-02/1301717087d557039.html</url>
-		<created_at>2011-04-02</created_at>
+		<title>欧美超模街拍 囧包魅力横扫时尚圈</title>
+		<url>http://clothing.lady8844.com/clothing/streetsnap/europe/2011-04-06/1302083469d557950.html</url>
+		<created_at>2011-04-10</created_at>
 	</post>
 	<post>
-		<category_id>2</category_id>
+		<category_id>4</category_id>
 		<topic_id>5351</topic_id>
-		<title>春天来了夏天还远吗 提前感受夏装</title>
-		<url>http://clothing.lady8844.com/clothing/photo/2011-04-02/1301730384d557270.html</url>
-		<created_at>2011-04-02</created_at>
+		<title>欧美潮童街拍 缤纷色彩乐享灿烂春日</title>
+		<url>http://clothing.lady8844.com/clothing/streetsnap/europe/2011-04-08/1302254894d558901.html</url>
+		<created_at>2011-04-08</created_at>
+	</post>
+	<post>
+		<category_id>4</category_id>
+		<topic_id>5350</topic_id>
+		<title>欧美达人街拍 展现个性美你也可以</title>
+		<url>http://clothing.lady8844.com/clothing/streetsnap/photo/2011-04-08/1302243978d558689.html</url>
+		<created_at>2011-04-09</created_at>
+	</post>
+	<post>
+		<category_id>3</category_id>
+		<topic_id>5349</topic_id>
+		<title>绝色半身裙美搭 迷情春日清新印象</title>
+		<url>http://clothing.lady8844.com/clothing/school/2011-04-08/1302245278d558714.html</url>
+		<created_at>2011-04-08</created_at>
 	</post>
 	<post>
 		<category_id>2</category_id>
-		<topic_id>5350</topic_id>
-		<title>OL春日气质魔法 雪纺衬衫狂加分</title>
-		<url>http://clothing.lady8844.com/clothing/fashion/ol/2011-04-01/1301639317d556616.html</url>
-		<created_at>2011-04-01</created_at>
-	</post>
-	<post>
-		<category_id>1</category_id>
-		<topic_id>5349</topic_id>
-		<title>“火星男”吴彦祖  剧里剧外穿出男人魅</title>
-		<url>http://clothing.lady8844.com/clothing/star/2011-04-07/1302156594d558214.html</url>
-		<created_at>2011-04-07</created_at>
-	</post>
-	<post>
-		<category_id>1</category_id>
 		<topic_id>5348</topic_id>
-		<title>时尚健康性感牛仔短裤迎接奔放盛夏</title>
-		<url>http://clothing.lady8844.com/clothing/star/2011-04-07/1302148635d558165.html</url>
-		<created_at>2011-04-07</created_at>
+		<title>春装萌动显活力 情侣卫衣花样多</title>
+		<url>http://clothing.lady8844.com/clothing/fashion/2011-04-08/1302250955d558838.html</url>
+		<created_at>2011-04-09</created_at>
 	</post>
 	<post>
-		<category_id>1</category_id>
+		<category_id>2</category_id>
 		<topic_id>5347</topic_id>
-		<title>单身男女 俊男美女穿衣搭配大乱斗</title>
-		<url>http://clothing.lady8844.com/clothing/star/2011-04-07/1302144390d558096.html</url>
-		<created_at>2011-04-07</created_at>
+		<title>春日清爽再现 条纹装自在最舒适</title>
+		<url>http://clothing.lady8844.com/clothing/fashion/2011-04-08/1302246796d558753.html</url>
+		<created_at>2011-04-08</created_at>
 	</post>
 	<post>
-		<category_id>1</category_id>
+		<category_id>2</category_id>
 		<topic_id>5346</topic_id>
-		<title>《画皮》妩媚薛凯琪 甜美公主百变装</title>
-		<url>http://clothing.lady8844.com/clothing/star/2011-04-06/1302071364d557747.html</url>
-		<created_at>2011-04-06</created_at>
+		<title>七彩缤纷针织开衫 玩转色彩童话</title>
+		<url>http://clothing.lady8844.com/clothing/fashion/2011-04-08/1302246572d558751.html</url>
+		<created_at>2011-04-09</created_at>
 	</post>
 	<post>
 		<category_id>1</category_id>
 		<topic_id>5345</topic_id>
-		<title>范玮琪陈建州婚纱照曝光 精致复古</title>
-		<url>http://clothing.lady8844.com/clothing/star/2011-04-06/1302059979d557649.html</url>
-		<created_at>2011-04-06</created_at>
+		<title>第一潮妈徐濠萦潮搭 再续时尚精神</title>
+		<url>http://clothing.lady8844.com/clothing/star/2011-04-08/1302249297d558805.html</url>
+		<created_at>2011-04-08</created_at>
 	</post>
 	<post>
 		<category_id>1</category_id>
 		<topic_id>5344</topic_id>
-		<title>"诱惑剧"赚眼球 韩国美装看不停</title>
-		<url>http://clothing.lady8844.com/clothing/star/2011-04-02/1301718075d557064.html</url>
-		<created_at>2011-04-02</created_at>
+		<title>吴佩慈牛仔性感装 倾情演绎女人味</title>
+		<url>http://clothing.lady8844.com/clothing/star/2011-04-08/1302249416d558812.html</url>
+		<created_at>2011-04-09</created_at>
 	</post>
 	<post>
 		<category_id>1</category_id>
 		<topic_id>5343</topic_id>
-		<title>当红小花甜美装pk 杨幂vs刘亦菲</title>
-		<url>http://clothing.lady8844.com/clothing/star/2011-04-02/1301715035d557011.html</url>
-		<created_at>2011-04-02</created_at>
-	</post>
-	<post>
-		<category_id>1</category_id>
-		<topic_id>5342</topic_id>
-		<title>张柏芝德貌双全 性感装扮洋溢温馨</title>
-		<url>http://clothing.lady8844.com/clothing/star/2011-04-01/1301625590d556422.html</url>
-		<created_at>2011-04-01</created_at>
+		<title>甜美人董璇《奋斗》 穿出吸睛甜美装</title>
+		<url>http://clothing.lady8844.com/clothing/star/2011-04-11/1302505670d559282.html</url>
+		<created_at>2011-04-11</created_at>
 	</post>
 </posts>

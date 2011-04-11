@@ -208,11 +208,11 @@ task(:get_new => :environment) do
     end
   end
   
-  BEGINDATE = "2011-04-01" 
+  BEGINDATE = "2011-04-08" 
 
   urls = []
-  #urls << "http://clothing.lady8844.com/clothing/star/index.html"
-  #urls << "http://clothing.lady8844.com/clothing/fashion/index.html"
+  urls << "http://clothing.lady8844.com/clothing/star/index.html"
+  urls << "http://clothing.lady8844.com/clothing/fashion/index.html"
   urls << "http://clothing.lady8844.com/clothing/school/index.html"
   urls << "http://clothing.lady8844.com/streetsnap/index.html"
   urls << "http://clothing.lady8844.com/clothing/accessories/index.html"
@@ -223,9 +223,9 @@ task(:get_new => :environment) do
     url = urls[i]   
     puts url
     puts "####################################"
-    open_url(url, i+3)
+    open_url(url, i+1)
   end
-  @topics = Topic.find(:all, :conditions => "content = ''")
+  @topics = Topic.find(:all, :conditions => "content = '' and created_at >= '2011-04-08'")
   for topic in @topics
     @post = Post.find_by_topic_id(topic.id)
     get_photo_content(@post)

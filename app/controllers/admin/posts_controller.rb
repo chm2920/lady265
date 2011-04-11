@@ -197,7 +197,7 @@ class Admin::PostsController < Admin::AdminBackEndController
   end
   
   def get_post
-    @topics = Topic.find(:all, :conditions => "content = ''")
+    @topics = Topic.find(:all, :conditions => "content = '' and created_at >= '2011-04-08'")
     for topic in @topics
       @post = Post.find_by_topic_id(topic.id)
       get_photo_content(@post)

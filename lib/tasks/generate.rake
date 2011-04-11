@@ -2,7 +2,7 @@
 
 desc "generate xml"
 task(:generate_xml => :environment) do
-  topics = Topic.find(:all, :conditions => "created_at >= '2011-04-01'", :order => "id desc")
+  topics = Topic.find(:all, :conditions => "created_at >= '2011-04-08'", :order => "id desc")
   f = File.new("public/xml/topics.xml","w:UTF-8")
 # f.puts "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
   f.puts "<topics>"
@@ -21,7 +21,7 @@ task(:generate_xml => :environment) do
   f.puts "</topics>"
   f.close
   
-  posts = Post.find(:all, :conditions => "created_at >= '2011-04-01'", :order => "id desc")
+  posts = Post.find(:all, :conditions => "created_at >= '2011-04-08'", :order => "id desc")
   f = File.new("public/xml/posts.xml","w:UTF-8")
 # f.puts "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
   f.puts "<posts>"
