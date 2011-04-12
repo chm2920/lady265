@@ -13,12 +13,12 @@ class ApplicationController < ActionController::Base
   
   def render_not_found(exception=nil)
     record_error(params[:path])
-    render :template => "errors/404", :status => 404, :layout => "admin_back_end"
+    render :template => "errors/404", :status => 404, :layout => "application"
   end
   
   def render_error(exception)
     record_error(exception)
-    render :template => "errors/500", :status => 500, :layout => "admin_back_end"
+    render :template => "errors/500", :status => 500, :layout => "application"
   end
   
   def record_error(e)
