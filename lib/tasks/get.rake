@@ -4,7 +4,7 @@ require 'open-uri'
 require 'iconv'
 
 desc "get_new_articles_from_web"
-task(:get_new => :environment) do  
+task(:get_new => :environment) do
   def get_content(post)    
     url = post.url
     puts "========================"
@@ -208,7 +208,7 @@ task(:get_new => :environment) do
     end
   end
   
-  BEGINDATE = "2011-04-08" 
+  BEGINDATE = "2011-04-11" 
 
   urls = []
   urls << "http://clothing.lady8844.com/clothing/star/index.html"
@@ -225,7 +225,7 @@ task(:get_new => :environment) do
     puts "####################################"
     open_url(url, i+1)
   end
-  @topics = Topic.find(:all, :conditions => "content = '' and created_at >= '2011-04-08'")
+  @topics = Topic.find(:all, :conditions => "content = '' and created_at >= '#{BEGINDATE}'")
   for topic in @topics
     @post = Post.find_by_topic_id(topic.id)
     get_photo_content(@post)
